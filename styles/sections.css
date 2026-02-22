@@ -772,7 +772,7 @@ section[id] {
 
   #projetos {
     scroll-margin-top: 80px;
-    padding: 4rem 5%;
+    padding: 5rem 5%;
   }
 
   .projetos .container {
@@ -788,10 +788,15 @@ section[id] {
 
   .projetos-text-impact {
     font-size: clamp(1.5rem, 5vw, 2rem);
+  } 
+
+  .projetos-text-pequeno, .projetos-text-grande {
+    text-align: justify;
+
   }
 
   .project-media img {
-    height: 260px;
+    height: 230px;
   }
 
   .carrossel-ui-mobile {

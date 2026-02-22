@@ -295,7 +295,7 @@
 
   .header-right {
     position: fixed;
-    left: 50%;
+    left: 67%;
     transform: translateX(-50%);
     gap: 10px;
   }
