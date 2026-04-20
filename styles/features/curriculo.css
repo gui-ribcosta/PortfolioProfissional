@@ -1,4 +1,4 @@
-﻿/* ===================================================== */
+/* ===================================================== */
 /* ================== PÃƒÂGINA CURRÃƒÂCULO ================= */
 /* ===================================================== */
 
@@ -48,14 +48,18 @@
 /* ================= BOTÃƒâ€¢ES ================= */
 
 .back-link {
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 10px;
   text-decoration: none;
+  color: #fff;
   font-weight: 600;
   transition: 0.3s ease;
+  white-space: nowrap;
 }
 
 .back-link:hover {
-  color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .btn-download {
