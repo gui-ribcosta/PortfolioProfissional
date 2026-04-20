@@ -8,6 +8,7 @@
 
   <!-- TÍTULO DA PÁGINA (aba do navegador) -->
   <title>Sobre | Guilherme Ribeiro</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- ESTILOS GERAIS DO PROJETO -->
   <link rel="stylesheet" href="styles/global.css">      <!-- Estilos globais -->
@@ -15,10 +16,10 @@
   <link rel="stylesheet" href="styles/pages.css">       <!-- Estilos específicos da página Sobre -->
 
   <!-- FONT AWESOME (ícones principais usados na stack e header) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <!-- BOXICONS (ícones extras como idioma e tema) -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -31,7 +32,7 @@
   <header class="sobre-header">
 
     <!-- BOTÃO DE VOLTAR (lado esquerdo) -->
-    <a href="index.html" class="back-link"><i class="fa-solid fa-angle-left"></i>
+    <a href="index.html" class="back-link" data-i18n="btn_voltar"><i class="fa-solid fa-angle-left"></i>
       Voltar ao Site
     </a>
 
@@ -40,14 +41,14 @@
 
       <!-- BOTÃO DE TROCA DE IDIOMA -->
       <button class="icon-btn" id="langToggle">
-        <i class='bx bx-world'></i>
-        <span class="icon-tooltip">SELETOR DE IDIOMA</span>
+        <i class="fa-solid fa-language"></i>
+        <span class="icon-tooltip">TRANSLATE TO ENGLISH</span>
       </button>
 
       <!-- BOTÃO DE TROCA DE TEMA (claro/escuro) -->
       <button class="icon-btn" id="themeToggle">
-        <i class='bx bx-sun'></i>
-        <span class="icon-tooltip">MODO CLARO</span>
+        <i class="fa-solid fa-circle-half-stroke"></i>
+        <span class="icon-tooltip" data-i18n="theme_light_tooltip">MODO CLARO</span>
       </button>
 
     </div>
@@ -66,7 +67,7 @@
     <section class="experiencia-section">
 
       <!-- Título da seção -->
-      <h2 class="section-title roxo">Experiência</h2>
+      <h2 class="section-title roxo" data-i18n="sobre_exp_title">Experiência</h2>
 
       <!-- Grid que organiza os cards -->
       <div class="experiencia-grid">
@@ -75,23 +76,23 @@
         <div class="experiencia-card">
 
           <!-- Período -->
-          <div class="periodo-badge">
+          <div class="periodo-badge" data-i18n="sobre_exp_date1">
             Março, 2026 — Atualmente
           </div>
 
           <!-- Cargo -->
-          <h3>ASSISTENTE DE DESENVOLVIMENTO</h3>
+          <h3 data-i18n="sobre_exp_role1">ASSISTENTE DE DESENVOLVIMENTO</h3>
 
           <!-- Empresa -->
           <span class="empresa">Dagat Smart</span>
 
           <!-- Descrição principal -->
-          <p class="descricao">
+          <p class="descricao" data-i18n="sobre_exp_desc1">
             Atuo na construção de soluções web completas e escaláveis, unindo backend e frontend com foco em qualidade, organização de código e aprendizado contínuo. Trabalho com tecnologias modernas como C#, .NET, ASP.NET, JavaScript, TypeScript, Next.js e MySQL, contribuindo para projetos reais e impactantes no setor de energia.
           </p>
 
           <!-- Lista de responsabilidades -->
-          <p class="pontos">
+          <p class="pontos" data-i18n="sobre_exp_list1">
             <span>•</span> Desenvolvimento backend com <strong>C#, .NET e ASP.NET</strong> e integração com bancos de dados <strong>MySQL</strong>.<br>
             <span>•</span> Criação e manutenção de interfaces frontend com <strong>JavaScript, TypeScript e Next.js</strong>.<br>
             <span>•</span> Participação em metodologias ágeis e colaboração em equipe para entrega de soluções eficientes. <br>
@@ -105,24 +106,24 @@
         <div class="experiencia-card">
 
           <!-- Período -->
-          <div class="periodo-badge">
+          <div class="periodo-badge" data-i18n="sobre_exp_date2">
             Fevereiro, 2026 — Atualmente
           </div>
 
           <!-- Cargo -->
-          <h3>FREELANCE DEVELOPER</h3>
+          <h3 data-i18n="sobre_exp_role2">FREELANCE DEVELOPER</h3>
 
           <!-- Empresa -->
-          <span class="empresa">Autônomo</span>
+          <span class="empresa" data-i18n="sobre_exp_empresa2">Autônomo</span>
 
           <!-- Descrição principal -->
-          <p class="descricao">
+          <p class="descricao" data-i18n="sobre_exp_desc2">
             Atuação como Designer & Desenvolvedor Freelancer, entregando soluções digitais completas, 
             desde a concepção visual até o desenvolvimento técnico.
           </p>
 
           <!-- Lista de responsabilidades -->
-          <p class="pontos">
+          <p class="pontos" data-i18n="sobre_exp_list2">
             <span>•</span> Desenvolvimento de aplicações web com foco em usabilidade, organização de código e desempenho <br>
             <span>•</span> Criação de interfaces responsivas utilizando HTML, CSS e JavaScript <br>
             <span>•</span> Desenvolvimento de projetos práticos voltados ao aprendizado e entrega de soluções simples <br>
@@ -139,28 +140,28 @@
 
     <section class="formacao-section">
 
-      <h2 class="section-title">Formação Acadêmica</h2>
+      <h2 class="section-title" data-i18n="sobre_form_title">Formação Acadêmica</h2>
 
       <div class="formacao-grid">
 
         <!-- Curso 1 -->
         <div class="formacao-card">
-          <div class="status andamento">Em andamento</div>
-          <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+          <div class="status andamento" data-i18n="sobre_form_status1">Em andamento</div>
+          <h3 data-i18n="sobre_form_curso1">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
           <span class="instituicao">IBMR</span>
-          <span class="periodo">01/2026 - 07/2026</span>
-          <p>
+          <span class="periodo" data-i18n="sobre_form_periodo1">01/2026 - 07/2026</span>
+          <p data-i18n="sobre_form_desc1">
             Graduação focada em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas.
           </p>
         </div>
 
         <!-- Curso 2 -->
         <div class="formacao-card">
-          <div class="status andamento">Em andamento</div>
-          <h3>Bacharelado em Ciência da Computação</h3>
+          <div class="status andamento" data-i18n="sobre_form_status2">Em andamento</div>
+          <h3 data-i18n="sobre_form_curso2">Bacharelado em Ciência da Computação</h3>
           <span class="instituicao">IBMR</span>
-          <span class="periodo">2026 - 2028</span>
-          <p>
+          <span class="periodo" data-i18n="sobre_form_periodo2">2026 - 2028</span>
+          <p data-i18n="sobre_form_desc2">
             Formação técnica em programação orientada a objetos, banco de dados e engenharia de software.
           </p>
         </div>
@@ -174,7 +175,7 @@
 
     <section class="tech-stack">
 
-      <h2 class="section-title">Stack Tecnológica</h2>
+      <h2 class="section-title" data-i18n="sobre_stack_title">Stack Tecnológica</h2>
 
       <div class="stack-wrapper">
 
@@ -183,7 +184,7 @@
 
          <!-- FRONT-END -->
 <div class="stack-card">
-  <h3>Front-end</h3>
+  <h3 data-i18n="sobre_stack_front">Front-end</h3>
   <div class="stack-icons">
     <i class="fa-brands fa-html5"></i>
     <i class="fa-brands fa-css3-alt"></i>
@@ -194,7 +195,7 @@
 
 <!-- BACK-END -->
 <div class="stack-card">
-  <h3>Back-end</h3>
+  <h3 data-i18n="sobre_stack_back">Back-end</h3>
   <div class="stack-icons">
     <i class="fa-brands fa-python"></i>
     <i class="fa-solid fa-code"></i> <!-- Representa C/C++ -->
@@ -206,7 +207,7 @@
 <!-- Linha inferior centralizada: Ferramentas -->
 <div class="stack-row center-row">
   <div class="stack-card tools-card">
-    <h3>Ferramentas</h3>
+    <h3 data-i18n="sobre_stack_tools">Ferramentas</h3>
     <div class="stack-icons">
       <i class="fa-brands fa-git-alt"></i>
       <i class="fa-brands fa-github"></i>
@@ -223,5 +224,13 @@
 
   </main>
 
+<script src="scripts/ui.js"></script>
+<script src="scripts/translations.js"></script>
+<script src="scripts/i18n.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    initThemeToggle();
+  });
+</script>
 </body>
 </html>

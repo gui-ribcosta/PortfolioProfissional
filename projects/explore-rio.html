@@ -7,16 +7,20 @@
       <link rel="stylesheet" href="../styles/pages.css">
 
         <!-- FONT AWESOME -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- BOXICONS -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body class="project-page">
 
 <header class="project-header">
-  <a href="../index.html" class="btn-back"> <i class="fa-solid fa-angle-left"></i> Back</a>
-  <span class="breadcrumb">Projetos > Explore Rio</span>
+  <a href="../index.html" class="btn-back" data-i18n="proj_back"><i class="fa-solid fa-angle-left"></i> Voltar</a>
+  <span class="breadcrumb" data-i18n="proj_breadcrumb_explore">Projetos > Explore Rio</span>
+
+  <button id="langToggle" class="icon-btn proj-lang-btn" aria-label="Toggle language">
+    <i class="fa-solid fa-language"></i>
+    <span class="icon-tooltip">TRANSLATE TO ENGLISH</span>
+  </button>
 </header>
 
 <section class="project-container">
@@ -26,31 +30,31 @@
     <h1 class="portfolio-title"><span>Explore</span> Rio</h1>
     <div class="title-bar"></div>
 
-    <div class="status desenvolvimento">Em desenvolvimento</div>
+    <div class="status desenvolvimento" data-i18n="proj_status_dev">Em desenvolvimento</div>
 
-    <p class="project-description">
+    <p class="project-description" data-i18n="proj_explore_pagedesc">
       Projeto turístico que apresenta os principais pontos turísticos do Rio de Janeiro, permitindo criar roteiros personalizados. Usuários podem filtrar por categoria, região, período e duração,tornando o planejamento de viagens intuitivo e visual.
     </p>
 
     <div class="stats">
       <div class="stat-card">
         <h3>3</h3>
-        <p>Total Tecnologias</p>
+        <p data-i18n="proj_stats_tech">Total Tecnologias</p>
       </div>
 
       <div class="stat-card">
         <h3>6</h3>
-        <p>Funcionalidades</p>
+        <p data-i18n="proj_stats_func">Funcionalidades</p>
       </div>
     </div>
 
     <div class="project-buttons">
-      <a href="#" class="btn-primary"> <i class="fa-solid fa-arrow-up-right-from-square"></i> Vercel (em breve...) </a>
-      <a href="https://github.com/gui-ribcosta/ExploreRio" class="btn-secondary"> <i class="fa-brands fa-github"></i> Github</a>
+      <a href="#" class="btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="proj_vercel_breve"><i class="fa-solid fa-arrow-up-right-from-square"></i> Vercel (em breve...)</a>
+      <a href="https://github.com/gui-ribcosta/ExploreRio" class="btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="proj_github"><i class="fa-brands fa-github"></i> Github</a>
     </div>
 
     <div class="technologies">
-      <h3> <span><i class="fa-solid fa-code"></i></span> Tecnologias Utilizadas</h3>
+      <h3 data-i18n="proj_tech_used"><span><i class="fa-solid fa-code"></i></span> Tecnologias Utilizadas</h3>
       <span class="tech-badge">HTML</span>
       <span class="tech-badge">CSS</span>
       <span class="tech-badge">JAVASCRIPT</span>
@@ -62,19 +66,19 @@
   <img src="../assets/images/explore_rio.png" alt="Projeto">
 
   <div class="features-card">
-    <h3>⭐ Funcionalidades</h3>
+    <h3 data-i18n="proj_features">⭐ Funcionalidades</h3>
     <ul>
-      <li>Filtrar passeios por categoria (praias, trilhas, museus, pontos turísticos).</li>
-      <li>Criar rotas personalizadas, otimizando a ordem de visita para maior eficiência.</li>
-      <li>Navegação rápida e intuitiva, com atualização dinâmica dos resultados.</li>
-      <li>Acessar de qualquer dispositivo com layout responsivo.</li>
-      <li>Explorar locais organizados por região da cidade.</li>
-      <li>Visualizar informações como nome, bairro, valor (gratuito ou pago) e tempo estimado de visita.</li>
+      <li data-i18n="feat_explore_1">Filtrar passeios por categoria (praias, trilhas, museus, pontos turísticos).</li>
+      <li data-i18n="feat_explore_2">Criar rotas personalizadas, otimizando a ordem de visita para maior eficiência.</li>
+      <li data-i18n="feat_explore_3">Navegação rápida e intuitiva, com atualização dinâmica dos resultados.</li>
+      <li data-i18n="feat_explore_4">Acessar de qualquer dispositivo com layout responsivo.</li>
+      <li data-i18n="feat_explore_5">Explorar locais organizados por região da cidade.</li>
+      <li data-i18n="feat_explore_6">Visualizar informações como nome, bairro, valor (gratuito ou pago) e tempo estimado de visita.</li>
     </ul>
   </div>
 </div>
 
-
-
+<script src="../scripts/translations.js"></script>
+<script src="../scripts/i18n.js"></script>
 </body>
 </html>

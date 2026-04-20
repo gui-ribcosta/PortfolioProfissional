@@ -1,65 +1,70 @@
-  <!DOCTYPE html>
-  <html lang="pt-BR">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Guilherme Ribeiro</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-      <link rel="stylesheet" href="styles/global.css">
-      <link rel="stylesheet" href="styles/layout.css">
-      <link rel="stylesheet" href="styles/components.css">
-      <link rel="stylesheet" href="styles/sections.css">
-      <link rel="stylesheet" href="styles/pages.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guilherme Ribeiro</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/pages.css">
 
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="stars"></div>
+  <div class="stars"></div>
 
-    
-      
+
+
   <!-- ================= HEADER ================= -->
 
 
   <header class="header reveal">
-      <button class="mobile-toggle" id="mobileToggle">☰</button>
 
     <!-- ESQUERDA -->
     <div class="header-left">
-      <div class="logo text-gradient"> <span><</span> Gui Ribeiro /> </div>
+      <div class="logo text-gradient"><span>&lt; </span>Gui Ribeiro /&gt;</div>
     </div>
 
-    <!-- CENTRO -->
-    <nav class="nav header-center">
-      <a href="#inicio">INÍCIO</a>
-      <a href="#sobre">SOBRE</a>
-      <a href="#projetos">PROJETOS</a>
-      <a href="#certificados">CERTIFICADOS</a>
-      <a href="#contato">CONTATO</a>
-    </nav>
+    <!-- CENTRO: links de navegação -->
+    <div class="header-center">
+      <nav class="nav">
+        <a href="#inicio" data-i18n="nav_inicio">INÍCIO</a>
+        <a href="#sobre" data-i18n="nav_sobre">SOBRE</a>
+        <a href="#projetos" data-i18n="nav_projetos">PROJETOS</a>
+        <a href="#certificados" data-i18n="nav_certificados">CERTIFICADOS</a>
+        <a href="#contato" data-i18n="nav_contato">CONTATO</a>
+      </nav>
+    </div>
 
-    <!-- DIREITA -->
-  <div class="header-right">
-    <!-- BOTÃO TRADUÇÃO -->
-    <button class="lang-toggle" id="langToggle">
-      <i class='bx bx-world'></i>
-      <span class="lang-tooltip">EM BREVE...</span>
-    </button>
+    <!-- DIREITA: ícones + toggle mobile -->
+    <div class="header-right">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <i class="fa-solid fa-language"></i>
+        <span class="lang-tooltip">TRANSLATE TO ENGLISH</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+        <span class="theme-tooltip" data-i18n="theme_tooltip">EM BREVE...</span>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
 
-    <!-- BOTÃO TEMA -->
-    <button class="theme-toggle" id="themeToggle">
-      <i class='bx bx-sun'></i>
-      <span class="theme-tooltip">EM BREVE...</span>
-    </button>
-  </div>
   </header>
 
 
@@ -67,145 +72,141 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- ================= MENU MOBILE ================= -->
-  <nav class="mobile-nav" id="mobileNav" >
-
-      <!-- Botão de fechar -->
-  <button class="close-mobile-nav" id="closeMobileNav">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-    <a href="#inicio">INÍCIO</a>
-    <a href="#sobre">SOBRE</a>
-    <a href="#projetos">PROJETOS</a>
-    <a href="#certificados">CERTIFICADOS</a>
-    <a href="#contato">CONTATO</a>
-
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="close-mobile-nav" id="closeMobileNav">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#inicio" data-i18n="nav_inicio">INÍCIO</a>
+    <a href="#sobre" data-i18n="nav_sobre">SOBRE</a>
+    <a href="#projetos" data-i18n="nav_projetos">PROJETOS</a>
+    <a href="#certificados" data-i18n="nav_certificados">CERTIFICADOS</a>
+    <a href="#contato" data-i18n="nav_contato">CONTATO</a>
   </nav>
 
 
-<!-- ================= INÍCIO ================= -->
+  <!-- ================= INÍCIO ================= -->
 
-<section id="inicio" class="inicio">
-  <div class="inicio_container">
+  <section id="inicio" class="inicio">
+    <div class="inicio_container">
 
-    <!-- ESQUERDA -->
-    <div class="inicio_left">
-      <h3 class="inicio_greeting">Olá, me chamo</h3>
-      <h1 class="inicio_name">
-        <span>Guilherme <br>Ribeiro</span>
-      </h1>
+      <!-- ESQUERDA -->
+      <div class="inicio_left">
+        <h3 class="inicio_greeting" data-i18n="inicio_greeting">Olá, me chamo</h3>
+        <h1 class="inicio_name">
+          <span>Guilherme <br>Ribeiro</span>
+        </h1>
+      </div>
+
+      <!-- CENTRO (IMAGEM) -->
+      <div class="inicio_center">
+        <div class="glow"></div>
+        <img src="assets/images/foto-home.png" alt="Guilherme Ribeiro" class="inicio_img">
+      </div>
+
+      <!-- DIREITA -->
+      <div class="inicio_right">
+        <h3 class="inicio_split" data-i18n="inicio_curious">Curious</h3>
+
+        <div class="titulo_stack">
+          <h1 class="stack_top" data-i18n="inicio_dev">Developer</h1>
+          <h1 class="stack_bottom" data-i18n="inicio_eng">& Engineer</h1>
+        </div>
+      </div>
+
+      <!-- REDES SOCIAIS (fixas na lateral — desktop) -->
+      <div class="inicio_social">
+        <a href="https://instagram.com/gui_ribcosta" target="_blank" rel="noopener noreferrer" class="inicio_social_link"
+          data-tooltip="INSTAGRAM" data-i18n="tooltip_insta" data-i18n-attr="data-tooltip">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/guiribcosta" target="_blank" rel="noopener noreferrer" class="inicio_social_link"
+          data-tooltip="LINKEDIN" data-i18n="tooltip_linkedin" data-i18n-attr="data-tooltip">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/gui-ribcosta" target="_blank" rel="noopener noreferrer" class="inicio_social_link" data-tooltip="GITHUB" data-i18n="tooltip_github" data-i18n-attr="data-tooltip">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:grcm171914@gmail.com" class="inicio_social_link" data-tooltip="E-MAIL" data-i18n="tooltip_email" data-i18n-attr="data-tooltip">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="curriculo.html" class="inicio_social_link" data-tooltip="CURRÍCULO" data-i18n="tooltip_curriculo" data-i18n-attr="data-tooltip">
+          <i class="fa-solid fa-file-lines"></i>
+        </a>
+      </div>
+
+      <!-- REDES SOCIAIS INLINE (mobile — aparece dentro da section) -->
+      <div class="inicio_social_inline">
+        <a href="https://instagram.com/gui_ribcosta" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/guiribcosta" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/gui-ribcosta" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:grcm171914@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="curriculo.html">
+          <i class="fa-solid fa-file-lines"></i>
+        </a>
+      </div>
+
     </div>
 
-    <!-- CENTRO (IMAGEM) -->
-    <div class="inicio_center">
-      <div class="glow"></div>
-      <img src="assets/images/foto-home.png" 
-           alt="Guilherme Ribeiro" 
-           class="inicio_img">
-    </div>
 
-    <!-- DIREITA -->
-<div class="inicio_right">
-  <h3 class="inicio_split">Curious</h3>
-
-  <div class="titulo_stack">
-    <h1 class="stack_top">Developer</h1>
-    <h1 class="stack_bottom">& Engineer</h1>
-  </div>
-</div>
-
-<!-- REDES SOCIAIS -->
-<div class="inicio_social">
-
-  <!-- Instagram -->
-  <a href="https://instagram.com/gui_ribcosta" target="_blank" class="inicio_social_link" data-tooltip="INSTAGRAM">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.333 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.77.127 4.603.39 3.635 1.358 2.667 2.326 2.404 3.493 2.347 4.775.012 8.332 0 8.741 0 12c0 3.259.012 3.668.07 4.948.057 1.282.32 2.449 1.288 3.417.968.968 2.135 1.231 3.417 1.288C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.282-.057 2.449-.32 3.417-1.288.968-.968 1.231-2.135 1.288-3.417.058-1.28.07-1.689.07-4.948s-.012-3.668-.07-4.948c-.057-1.282-.32-2.449-1.288-3.417-.968-.968-2.135-1.231-3.417-1.288C15.668.012 15.259 0 12 0z"/>
-      <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/>
-    </svg>
-  </a>
-
-  <!-- LinkedIn -->
-  <a href="https://linkedin.com/in/guiribcosta" target="_blank" class="inicio_social_link" data-tooltip="LINKEDIN">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.866-3.063-1.867 0-2.153 1.459-2.153 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.562 2.838-1.562 3.036 0 3.598 2 3.598 4.599v5.596z"/>
-    </svg>
-  </a>
-
-  <!-- GitHub -->
-  <a href="https://github.com/gui-ribcosta" target="_blank" class="inicio_social_link" data-tooltip="GITHUB">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.333-5.467-5.93 0-1.31.465-2.382 1.235-3.222-.123-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.403c1.02.005 2.045.138 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.242 2.873.119 3.176.77.84 1.234 1.912 1.234 3.222 0 4.61-2.807 5.625-5.479 5.921.429.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .319.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-    </svg>
-  </a>
-
-  <!-- E-mail -->
-  <a href="mailto:grcm171914@gmail.com" class="inicio_social_link" data-tooltip="E-MAIL">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 12.713l11.985-9.713h-23.97l11.985 9.713zm0 2.574l-12-9.713v13.426h24v-13.426l-12 9.713z"/>
-    </svg>
-  </a>
-
-  <!-- Currículo -->
-  <a href="curriculo.html" class="inicio_social_link" data-tooltip="CURRÍCULO">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M6 2h9l5 5v15c0 1.104-.896 2-2 2h-12c-1.104 0-2-.896-2-2v-18c0-1.104.896-2 2-2zm9 1.5v4h4l-4-4zm-9 16h12v-13h-5v-5h-7v18z"/>
-    </svg>
-  </a>
-
-</div>
-
-  </div>
-
-  
-</section>
+  </section>
 
 
   <!-- ================= SOBRE MIM ================= -->
 
-  <section class="sobre reveal">
-      <div id="sobre" class="sobre-container">
+  <section id="sobre" class="sobre reveal">
+    <div class="sobre-container">
 
-          <div class="sobre-img reveal">
-              <img src="assets/images/foto_sobre2.0.jpeg" alt="Foto Sobre Mim" loading="lazy">
-          </div>
+      <div class="sobre-img reveal">
+        <img src="assets/images/foto_sobre2.0.jpeg" alt="Foto Sobre Mim" loading="lazy">
+      </div>
 
-          <div class="sobre-text reveal">
-              <p class="sobre-text-impactante text-gradient">
-                  SOBRE MIM
-              </p>
+      <div class="sobre-text reveal">
+        <p class="sobre-text-impactante text-gradient" data-i18n="sobre_title">
+          SOBRE MIM
+        </p>
 
-              <p class="sobre-text-impactante-2 text-gradient">
+        <p class="sobre-text-impactante-2 text-gradient">
 
-              </p>
+        </p>
 
-                    <div class="title-divider">
-    <span class="line"></span>
-    <span class="dot"></span>
-  </div>
+        <div class="title-divider">
+          <span class="line"></span>
+          <span class="dot"></span>
+        </div>
 
-  <p class="resumo-text">
-    Atualmente atuo como 
-    <span class="destaque"><strong>Assistente de Desenvolvimento na empresa Dagat Smart</strong></span> 
-    ampliando meus conhecimentos na prática em projetos para empresas como Petrobrás, Hospital Sírio Libanês e Rede D'Or.
-  </p>
+        <p class="resumo-text" data-i18n="sobre_p1">
+          Atualmente atuo como
+          <span class="destaque"><strong>Assistente de Desenvolvimento na empresa Dagat Smart</strong></span>
+          ampliando meus conhecimentos na prática em projetos para empresas como Petrobrás, Hospital Sírio Libanês e
+          Rede D'Or.
+        </p>
 
-  <p class="resumo-text">
-    Atuo com 
-    <span class="destaque"><strong>C#, .NET, ASP.NET, JavaScript e TyperScript</strong></span>, 
-    aplicando boas práticas de versionamento com 
-    <span class="destaque"><strong>Git e GitHub</strong></span>, 
-    além de trabalhar com bancos de dados 
-    <span class="destaque"><strong>MySQL</strong></span> 
-    para estruturação e persistência de dados. Tenho familiaridade com linguagens como 
-    <span class="destaque"><strong>Python, C e C++</strong></span>, 
-    além de desenvolvimento responsivo, organização de código e preocupação com performance e experiência do usuário.
-  </p>
-  <div class="social-area reveal">
+        <p class="resumo-text" data-i18n="sobre_p2">
+          Atuo com
+          <span class="destaque"><strong>C#, .NET, ASP.NET, JavaScript e TyperScript</strong></span>,
+          aplicando boas práticas de versionamento com
+          <span class="destaque"><strong>Git e GitHub</strong></span>,
+          além de trabalhar com bancos de dados
+          <span class="destaque"><strong>MySQL</strong></span>
+          para estruturação e persistência de dados. Tenho familiaridade com linguagens como
+          <span class="destaque"><strong>Python, C e C++</strong></span>,
+          além de desenvolvimento responsivo, organização de código e preocupação com performance e experiência do
+          usuário.
+        </p>
+        <div class="social-area reveal">
 
-    <a href="sobre.html" class="btn-ver-mais">VER MAIS ➔</a>
+          <a href="sobre.html" class="btn-ver-mais" data-i18n="sobre_btn">VER MAIS ➔</a>
 
 
-  </div>
+        </div>
 
       </div>
   </section>
@@ -220,20 +221,20 @@
       <!-- ================= TEXTO (ESQUERDA) ================= -->
       <div class="projetos-text reveal">
 
-        <p class="projetos-text-impact text-gradient">
+        <p class="projetos-text-impact text-gradient" data-i18n="proj_title1">
           PROJETOS EM DESTAQUE
         </p>
 
-    <div class="title-divider left">
-      <span class="line"></span>
-      <span class="dot"></span>
-    </div>
+        <div class="title-divider left">
+          <span class="line"></span>
+          <span class="dot"></span>
+        </div>
 
-        <p class="projetos-text-pequeno">
+        <p class="projetos-text-pequeno" data-i18n="proj_subtitle1">
           Uma seleção dos meus
-        </p>        
+        </p>
 
-        <p class="projetos-text-grande text-gradient">
+        <p class="projetos-text-grande text-gradient" data-i18n="proj_title2">
           MELHORES PROJETOS
         </p>
 
@@ -266,73 +267,80 @@
           <div class="project-wrapper reveal">
             <div class="project-card">
 
-  <div class="project-media">
-    <img src="assets/images/portfolio-profissional.png" alt="Projeto 1">
-  </div>
+              <div class="project-media">
+                <img src="assets/images/portfolio-profissional.png" alt="Projeto 1">
+              </div>
 
-  <div class="project-content">
-    <h3 class="project-title">Portfolio Profissional</h3>
+              <div class="project-content">
+                <h3 class="project-title" data-i18n="proj_portfolio_title">Portfolio Profissional</h3>
 
-    <p class="project-description">
-      Projeto de portfolio profissional desenvolvido para demonstrar habilidades em desenvolvimento web, organização de código e criação de interfaces modernas e responsivas, aplicando boas práticas, foco em experiência do usuário, desempenho e acessibilidade.
-    </p>
+                <p class="project-description" data-i18n="proj_portfolio_desc">
+                  Projeto de portfolio profissional desenvolvido para demonstrar habilidades em desenvolvimento web,
+                  organização de código e criação de interfaces modernas e responsivas, aplicando boas práticas, foco em
+                  experiência do usuário, desempenho e acessibilidade.
+                </p>
 
-    <div class="project-actions">
-      <a href="https://gui-ribeiro.vercel.app/index.html#inicio" class="btn-demo">Ver Site</a>
-      <a href="projects/portfolio.html" class="btn-details">Detalhes →</a>
-    </div>
-  </div>
+                <div class="project-actions">
+                  <a href="https://gui-ribeiro.vercel.app/index.html#inicio" class="btn-demo" data-i18n="btn_ver_site">Ver Site</a>
+                  <a href="projects/portfolio.html" class="btn-details" data-i18n="btn_detalhes">Detalhes →</a>
+                </div>
+              </div>
 
-</div>
+            </div>
           </div>
 
           <!-- ===== PROJETO 2 ===== -->
           <div class="project-wrapper reveal">
             <div class="project-card">
 
-  <div class="project-media">
-    <img src="assets/images/explore_rio.png" alt="Projeto 2">
-  </div>
+              <div class="project-media">
+                <img src="assets/images/explore_rio.png" alt="Projeto 2">
+              </div>
 
-  <div class="project-content">
-    <h3 class="project-title">Explore Rio</h3>
+              <div class="project-content">
+                <h3 class="project-title" data-i18n="proj_explore_title">Explore Rio</h3>
 
-    <p class="project-description">
-O projeto apresenta os principais pontos turísticos do Rio de Janeiro, permitindo criar roteiros personalizados. Usuários podem filtrar por categoria, região, período e duração,tornando o planejamento de viagens intuitivo e visual. Além disso, os visitantes terão dicas personalizadas para cada ponto, feitas por guias turísticos.
-    </p>
+                <p class="project-description" data-i18n="proj_explore_desc">
+                  O projeto apresenta os principais pontos turísticos do Rio de Janeiro, permitindo criar roteiros
+                  personalizados. Usuários podem filtrar por categoria, região, período e duração,tornando o
+                  planejamento de viagens intuitivo e visual. Além disso, os visitantes terão dicas personalizadas para
+                  cada ponto, feitas por guias turísticos.
+                </p>
 
-    <div class="project-actions">
-      <a href="https://github.com/gui-ribcosta/ExploreRio" class="btn-demo">Ver site</a>
-      <a href="./projects/explore-rio.html" class="btn-details">Detalhes →</a>
-    </div>
-  </div>
+                <div class="project-actions">
+                  <a href="https://github.com/gui-ribcosta/ExploreRio" class="btn-demo" data-i18n="btn_ver_site">Ver site</a>
+                  <a href="./projects/explore-rio.html" class="btn-details" data-i18n="btn_detalhes">Detalhes →</a>
+                </div>
+              </div>
 
-</div>
+            </div>
           </div>
 
           <!-- ===== PROJETO 3 ===== -->
           <div class="project-wrapper reveal">
             <div class="project-card">
 
-  <div class="project-media">
-    <img src="assets/images/rooms.png" alt="Projeto 13">
-  </div>
+              <div class="project-media">
+                <img src="assets/images/rooms.png" alt="Projeto 13">
+              </div>
 
-  <div class="project-content">
-    <h3 class="project-title">MeetingRoomSystem</h3>
+              <div class="project-content">
+                <h3 class="project-title" data-i18n="proj_rooms_title">MeetingRoomSystem</h3>
 
-    <p class="project-description">
-      Sistema web completo para gerenciamento de salas de reunião, com controle de participantes por códigos de acesso únicos. Ele permite criar, listar e deletar salas, adicionar participantes, gerar códigos únicos e controlar o acesso de forma prática.
-    </p>
+                <p class="project-description" data-i18n="proj_rooms_desc">
+                  Sistema web completo para gerenciamento de salas de reunião, com controle de participantes por códigos
+                  de acesso únicos. Ele permite criar, listar e deletar salas, adicionar participantes, gerar códigos
+                  únicos e controlar o acesso de forma prática.
+                </p>
 
-    <div class="project-actions">
-      <a href="https://github.com/gui-ribcosta/MeetingRoomSystem" class="btn-demo">Ver Site</a>
-      <a href="./projects/rooms.html" class="btn-details">Detalhes →</a>
-    </div>
-  </div>
+                <div class="project-actions">
+                  <a href="https://github.com/gui-ribcosta/MeetingRoomSystem" class="btn-demo" data-i18n="btn_ver_site">Ver Site</a>
+                  <a href="./projects/rooms.html" class="btn-details" data-i18n="btn_detalhes">Detalhes →</a>
+                </div>
+              </div>
 
-</div>
-</div>
+            </div>
+          </div>
         </div>
 
         <!-- ===== UI MOBILE (embaixo do carrossel) ===== -->
@@ -341,7 +349,7 @@ O projeto apresenta os principais pontos turísticos do Rio de Janeiro, permitin
           <!-- SETAS -->
           <div class="carrossel-arrows">
             <button class="carrossel-btn carrossel-btn-prev mobile">&#10094;</button>
-  <button class="carrossel-btn carrossel-btn-next mobile">&#10095;</button>
+            <button class="carrossel-btn carrossel-btn-next mobile">&#10095;</button>
 
           </div>
 
@@ -359,103 +367,74 @@ O projeto apresenta os principais pontos turísticos do Rio de Janeiro, permitin
   </section>
 
 
-<!-- ================= CERTIFICADOS ================= -->
-<section id="certificados" class="certificados reveal">
-  <div class="container">
+  <!-- ================= CERTIFICADOS ================= -->
+  <section id="certificados" class="certificados reveal">
+    <div class="container">
 
-    <!-- ================= CARROSSEL (ESQUERDA) ================= -->
-    <div class="cert-wrapper reveal">
+      <!-- ================= CARROSSEL (ESQUERDA) ================= -->
+      <div class="cert-wrapper reveal">
 
-      <!-- TÍTULO -->
-      <h3 class="cert-titulo text-gradient">CERTIFICADOS EM DESTAQUE:</h3>
+        <!-- TÍTULO -->
+        <h3 class="cert-titulo text-gradient" data-i18n="cert_title">CERTIFICADOS EM DESTAQUE:</h3>
 
-      <!-- CARDS -->
-      <div class="cert-card-container carrossel-track" data-carrossel="certificados">
+        <!-- CARDS -->
+        <div class="cert-card-container carrossel-track" data-carrossel="certificados">
 
-        <!-- CARD 1 -->
-        <div class="cert-card-principal">
-          <img src="assets/images/Certificado SFPC.png" alt="Certificação 1">
-          <div class="cert-info">
-            <p>CERTIPROF<br>
-Scrum Foundation Professional Certificate (SFPC)<br> Código: 101767790</p>
+          <!-- CARD 1 -->
+          <div class="cert-card-principal">
+            <img src="assets/images/Certificado SFPC.png" alt="Certificação 1">
+            <div class="cert-info">
+              <p><span data-i18n="cert_sfpc">CERTIPROF<br>
+                Scrum Foundation Professional Certificate (SFPC)<br> Código: 101767790</span></p>
+            </div>
           </div>
-        </div>
 
-        <!-- CARD 2 -->
-        <div class="cert-card-principal">
-          <img src="assets/images/Certificado_HTML.png" alt="Certificação 2">
-          <div class="cert-info">
-            <p>Ada Tech - HTML<br>Curso introdutório de HTML <br></p>
+          <!-- CARD 2 -->
+          <div class="cert-card-principal">
+            <img src="assets/images/Certificado_HTML.png" alt="Certificação 2">
+            <div class="cert-info">
+              <p><span data-i18n="cert_html">Ada Tech - HTML<br>Curso introdutório de HTML <br></span></p>
+            </div>
           </div>
-        </div>
 
-        <!-- CARD 3 -->
-        <div class="cert-card-principal">
-          <img src="assets/images/em_breve.png" alt="Certificação 3">
-          <div class="cert-info">
-            <p>Em breve...<br>Em breve...<br>Em breve...</p>
+          <!-- CARD 3 -->
+          <div class="cert-card-principal">
+            <img src="assets/images/em_breve.png" alt="Certificação 3">
+            <div class="cert-info">
+              <p><span data-i18n="cert_breve">Em breve...<br>Em breve...<br>Em breve...</span></p>
+            </div>
           </div>
-        </div>
 
-        <!-- CARD 4 -->
-        <div class="cert-card-principal">
-          <img src="assets/images/em_breve.png" alt="Certificação 4">
-          <div class="cert-info">
-            <p>Em breve...<br>Em breve...<br>Em breve...</p>
+          <!-- CARD 4 -->
+          <div class="cert-card-principal">
+            <img src="assets/images/em_breve.png" alt="Certificação 4">
+            <div class="cert-info">
+              <p><span data-i18n="cert_breve">Em breve...<br>Em breve...<br>Em breve...</span></p>
+            </div>
           </div>
-        </div>
 
-        <!-- CARD 5 -->
-        <div class="cert-card-principal">
-          <img src="assets/images/em_breve.png" alt="Certificação 5">
-          <div class="cert-info">
-            <p>Em breve...<br>Em breve...<br>Em breve...</p>
+          <!-- CARD 5 -->
+          <div class="cert-card-principal">
+            <img src="assets/images/em_breve.png" alt="Certificação 5">
+            <div class="cert-info">
+              <p><span data-i18n="cert_breve">Em breve...<br>Em breve...<br>Em breve...</span></p>
+            </div>
           </div>
-        </div>
 
-      </div> <!-- fim cert-card-container -->
+        </div> <!-- fim cert-card-container -->
 
-      <!-- BOTÃO VER TODOS -->
-      <a href="#certificados" class="btn-ver-todos">VER TODOS</a>
+        <!-- BOTÃO VER TODOS -->
+        <a href="#certificados" class="btn-ver-todos" data-i18n="btn_ver_todos">VER TODOS</a>
 
-    </div> <!-- fim cert-wrapper -->
+      </div> <!-- fim cert-wrapper -->
 
-    <!-- ================= UI MOBILE ================= -->
-    <div class="carrossel-ui carrossel-ui-mobile certificados-ui-mobile">
-      <div class="carrossel-arrows">
-        <button class="carrossel-btn-prev mobile">&#10094;</button>
-        <button class="carrossel-btn-next mobile">&#10095;</button>
-      </div>
-      <div class="carrossel-indicators mobile">
-        <span class="indicator active"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
-      </div>
-    </div>
-
-    <!-- ================= TEXTO (DIREITA) ================= -->
-    <div class="estudos-text reveal">
-      <h3 class="estudos-text-grande text-gradient">NEM TUDO VEIO SÓ DA PRÁTICA...</h3>
-
-    <div class="title-divider center">
-      <span class="line"></span>
-      <span class="dot"></span>
-    </div>
-
-      <p class="estudos-text-pequeno">ESTUDAR MUITO TAMBÉM FEZ PARTE DA MINHA TRAJETÓRIA.</p>
-      <p class="estudos-text-pequeno-2">
-        Busquei certificações reconhecidas para consolidar meu conhecimento técnico.
-      </p>
-
-      <!-- UI DESKTOP -->
-      <div class="carrossel-ui carrossel-ui-desktop certificados-ui-desktop">
+      <!-- ================= UI MOBILE ================= -->
+      <div class="carrossel-ui carrossel-ui-mobile certificados-ui-mobile">
         <div class="carrossel-arrows">
-          <button class="carrossel-btn-prev">&#10094;</button>
-          <button class="carrossel-btn-next">&#10095;</button>
+          <button class="carrossel-btn-prev mobile">&#10094;</button>
+          <button class="carrossel-btn-next mobile">&#10095;</button>
         </div>
-        <div class="carrossel-indicators desktop">
+        <div class="carrossel-indicators mobile">
           <span class="indicator active"></span>
           <span class="indicator"></span>
           <span class="indicator"></span>
@@ -464,10 +443,39 @@ Scrum Foundation Professional Certificate (SFPC)<br> Código: 101767790</p>
         </div>
       </div>
 
-    </div> <!-- fim estudos-text -->
+      <!-- ================= TEXTO (DIREITA) ================= -->
+      <div class="estudos-text reveal">
+        <h3 class="estudos-text-grande text-gradient" data-i18n="estudos_title">NEM TUDO VEIO SÓ DA PRÁTICA...</h3>
 
-  </div> <!-- fim container -->
-</section>
+        <div class="title-divider center">
+          <span class="line"></span>
+          <span class="dot"></span>
+        </div>
+
+        <p class="estudos-text-pequeno" data-i18n="estudos_sub1">ESTUDAR MUITO TAMBÉM FEZ PARTE DA MINHA TRAJETÓRIA.</p>
+        <p class="estudos-text-pequeno-2" data-i18n="estudos_sub2">
+          Busquei certificações reconhecidas para consolidar meu conhecimento técnico.
+        </p>
+
+        <!-- UI DESKTOP -->
+        <div class="carrossel-ui carrossel-ui-desktop certificados-ui-desktop">
+          <div class="carrossel-arrows">
+            <button class="carrossel-btn-prev">&#10094;</button>
+            <button class="carrossel-btn-next">&#10095;</button>
+          </div>
+          <div class="carrossel-indicators desktop">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+          </div>
+        </div>
+
+      </div> <!-- fim estudos-text -->
+
+    </div> <!-- fim container -->
+  </section>
 
 
 
@@ -488,19 +496,19 @@ Scrum Foundation Professional Certificate (SFPC)<br> Código: 101767790</p>
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-          <!-- repetir para loop contínuo -->
+      <!-- repetir para loop contínuo -->
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-          <!-- repetir para loop contínuo -->
+      <!-- repetir para loop contínuo -->
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-      
+
     </div>
   </div>
 
@@ -509,32 +517,32 @@ Scrum Foundation Professional Certificate (SFPC)<br> Código: 101767790</p>
 
   <section id="contato" class="contato reveal">
 
-    <p class="contato-historia text-gradient reveal">
+    <p class="contato-historia text-gradient reveal" data-i18n="contato_historia">
       Ainda estou muito longe da perfeição.<br>
       E provavelmente nunca vou alcançá-la, porque isso não existe.<br><br>
       Mas estou sempre me esforçando, aprendendo e melhorando.
     </p>
 
-    <p class="contato-convite reveal">
+    <p class="contato-convite reveal" data-i18n="contato_convite">
       Se quiser trocar uma ideia, ver meus projetos ou simplesmente conversar,
       fica à vontade pra me chamar.
     </p>
 
     <div class="contato-cards reveal">
       <a href="mailto:grcm171914@gmail.com" class="contato-card reveal">
-        <i data-lucide="mail"></i>
+        <i class="fa-solid fa-envelope"></i>
         <span>Email</span>
       </a>
       <a href="https://wa.me/5521980417869" class="contato-card reveal">
-        <i data-lucide="phone-call"></i>
+        <i class="fa-brands fa-whatsapp"></i>
         <span>Whatsapp</span>
       </a>
-      <a href="https://linkedin.com/" class="contato-card reveal">
-        <i data-lucide="linkedin"></i>
+      <a href="https://linkedin.com/in/guiribcosta" class="contato-card reveal">
+        <i class="fa-brands fa-linkedin"></i>
         <span>LinkedIn</span>
       </a>
-      <a href="https://instagram.com/" class="contato-card reveal">
-        <i data-lucide="instagram"></i>
+      <a href="https://instagram.com/gui_ribcosta" class="contato-card reveal">
+        <i class="fa-brands fa-instagram"></i>
         <span>Instagram</span>
       </a>
     </div>
@@ -545,144 +553,35 @@ Scrum Foundation Professional Certificate (SFPC)<br> Código: 101767790</p>
 
   <footer class="footer reveal">
     <div class="footer-content">
-      <p>
+      <p data-i18n="footer_desc">
         Em constante evolução. Aprendendo, errando e melhorando um pouco todos os dias.
       </p>
 
       <div class="footer-nav">
-          <a href="#inicio">INÍCIO</a>
-          <a href="#sobre">SOBRE</a>
-          <a href="#projetos">PROJETOS</a>
-          <a href="#certificados">CERTIFICADOS</a>
-          <a href="#contato">CONTATO</a>
+        <a href="#inicio" data-i18n="nav_inicio">INÍCIO</a>
+        <a href="#sobre" data-i18n="nav_sobre">SOBRE</a>
+        <a href="#projetos" data-i18n="nav_projetos">PROJETOS</a>
+        <a href="#certificados" data-i18n="nav_certificados">CERTIFICADOS</a>
+        <a href="#contato" data-i18n="nav_contato">CONTATO</a>
       </div>
 
-      <span class="footer-copy">
+      <span class="footer-copy" data-i18n="footer_copy">
         © 2026 — Todos os direitos reservados
       </span>
     </div>
   </footer>
 
-<!-- Lucide primeiro -->
-<script src="https://unpkg.com/lucide@latest" defer></script>
-<script>lucide.replace();</script>
 
-<!-- Seus JS depois -->
-<script src="scripts/components.js"></script>
-<script src="scripts/ui.js"></script>
-<script src="scripts/main.js"></script>
 
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-  // 1️⃣ Inicializa ícones Lucide
-  lucide.createIcons();
+  <!-- Seus JS depois -->
+  <script src="scripts/components.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
 
-  // 2️⃣ Inicializa menu mobile com scroll suave
-  (function initMobileMenu() {
-    const mobileToggle = document.getElementById('mobileToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    const closeBtn = document.getElementById('closeMobileNav');
-    const overlay = document.getElementById('overlay');
-    const header = document.querySelector('.header');
 
-    mobileToggle?.addEventListener('click', () => {
-      mobileNav.classList.add('active');
-      overlay.classList.add('active');
-    });
 
-    closeBtn?.addEventListener('click', () => {
-      mobileNav.classList.remove('active');
-      overlay.classList.remove('active');
-    });
+  <script src="scripts/translations.js"></script>
+  <script src="scripts/i18n.js"></script>
+</body>
 
-    overlay?.addEventListener('click', () => {
-      mobileNav.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-
-    mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const target = document.querySelector(targetId);
-        if (!target) return;
-
-        mobileNav.classList.remove('active');
-        overlay.classList.remove('active');
-
-        const topPos = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight;
-        window.scrollTo({ top: topPos, behavior: 'smooth' });
-      });
-    });
-  })();
-
-  // 3️⃣ Inicializa carrosséis
-  class Carrossel {
-    constructor(sectionSelector) {
-      this.section = document.querySelector(sectionSelector);
-      if (!this.section) return;
-
-      this.track = this.section.querySelector(".carrossel-track");
-      this.cards = Array.from(this.track.children);
-      this.index = 0;
-
-      const trackStyle = getComputedStyle(this.track);
-      this.gap = parseFloat(trackStyle.gap) || 0;
-
-      this.prevButtons = this.section.querySelectorAll(".carrossel-btn-prev");
-      this.nextButtons = this.section.querySelectorAll(".carrossel-btn-next");
-
-      this.indicatorsDesktop = this.section.querySelectorAll(".carrossel-ui-desktop .indicator");
-      this.indicatorsMobile = this.section.querySelectorAll(".carrossel-ui-mobile .indicator");
-
-      this.prevButtons.forEach(btn => btn.addEventListener("click", () => this.prev()));
-      this.nextButtons.forEach(btn => btn.addEventListener("click", () => this.next()));
-
-      this.indicatorsDesktop.forEach((dot, i) => 
-        dot.addEventListener("click", () => { this.index = i; this.update(); })
-      );
-      this.indicatorsMobile.forEach((dot, i) => 
-        dot.addEventListener("click", () => { this.index = i; this.update(); })
-      );
-
-      this.update();
-      window.addEventListener("resize", () => this.update());
-    }
-
-    getCardWidth() {
-      const card = this.cards[0];
-      const cardStyle = getComputedStyle(card);
-      const marginRight = parseFloat(cardStyle.marginRight) || 0;
-      return card.getBoundingClientRect().width + this.gap + marginRight;
-    }
-
-    update() {
-      const cardWidth = this.getCardWidth();
-      this.track.style.transform = `translateX(-${this.index * cardWidth}px)`;
-
-      const indicators = window.innerWidth >= 1024 
-        ? this.indicatorsDesktop 
-        : this.indicatorsMobile;
-
-      indicators.forEach(dot => dot.classList.remove("active"));
-      if (indicators[this.index]) indicators[this.index].classList.add("active");
-    }
-
-    prev() { this.index = (this.index - 1 + this.cards.length) % this.cards.length; this.update(); }
-    next() { this.index = (this.index + 1) % this.cards.length; this.update(); }
-  }
-
-  new Carrossel("#projetos");
-  new Carrossel("#certificados");
-
-  // 4️⃣ Inicializa slider infinito de certificações tech
-  const techTrack = document.querySelector('.cert-tech-track');
-  if (techTrack) {
-    [...techTrack.children].forEach(icon => techTrack.appendChild(icon.cloneNode(true)));
-    techTrack.classList.add('animate');
-  }
-});
-</script>
-
-  </body>
-  </html>
+</html>

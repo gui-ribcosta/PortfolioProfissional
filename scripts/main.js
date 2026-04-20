@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initThemeToggle();
   initRevealOnScroll();
-  initSmoothScroll();
-  initTypingEffect();
 
   // COMPONENTS
   new Carrossel("#projetos");

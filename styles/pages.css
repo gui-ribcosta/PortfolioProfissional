@@ -141,10 +141,10 @@
 
 .experiencia-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
 
   gap: 40px;
-  margin-top: 40px; /* reduzido de 60px */
+  margin-top: 40px;
 }
 
 
@@ -311,7 +311,7 @@
   padding: 30px;
   border-radius: 18px;
 
-  width: 420px;
+  width: clamp(280px, 42vw, 420px);
   border: 1px solid rgba(201,88,233,0.2);
 
   transition: 0.3s ease;
@@ -344,14 +344,124 @@
 
 
 /* ===================================================== */
-/* ================== RESPONSIVIDADE =================== */
+/* ========= RESPONSIVIDADE — PÁGINA SOBRE ============= */
 /* ===================================================== */
 
+/* ---- Tablet largo ---- */
+@media (max-width: 1024px) {
+
+  .sobre-header {
+    padding: 16px 4%;
+  }
+
+  .experiencia-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formacao-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-card {
+    width: clamp(260px, 80vw, 420px);
+  }
+
+}
+
+/* ---- Tablet / Mobile ---- */
 @media (max-width: 768px) {
 
+  /* Header empilha verticalmente */
+  .sobre-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 5%;
+  }
+
+  .header-right {
+    align-self: flex-end;
+  }
+
+  /* Wrapper principal */
+  .sobre-wrapper {
+    padding: 20px 5% 40px;
+    gap: 40px;
+  }
+
+  /* Compensar header maior */
+  .sobre-body {
+    padding-top: 120px;
+  }
+
+  /* Seções internas */
+  .experiencia-section,
+  .formacao-section,
+  .tech-stack {
+    padding: 40px 5%;
+  }
+
+  /* Cards de experiência */
+  .experiencia-card {
+    padding: 24px;
+  }
+
+  /* Cards de formação */
+  .formacao-card {
+    padding: 24px;
+  }
+
+  /* Stack tecnológica */
   .stack-row {
     flex-direction: column;
     align-items: center;
+  }
+
+  .stack-card {
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+}
+
+/* ---- Mobile pequeno ---- */
+@media (max-width: 480px) {
+
+  .sobre-body {
+    padding-top: 130px;
+  }
+
+  .sobre-header {
+    padding: 12px 4%;
+    gap: 8px;
+  }
+
+  .experiencia-card,
+  .formacao-card {
+    padding: 18px;
+  }
+
+  .experiencia-card h3 {
+    font-size: 1rem;
+  }
+
+  .descricao,
+  .pontos {
+    font-size: 0.88rem;
+  }
+
+  .stack-icons i {
+    font-size: 32px;
+    margin: 0 8px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
   }
 
 }
@@ -437,13 +547,54 @@
   border-color: var(--accent);
 }
 
+/* Agrupa download + botão de idioma no lado direito */
+.curriculo-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Botão de idioma no currículo */
+.curriculo-lang-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  flex-shrink: 0;
+}
+
+.curriculo-lang-btn i {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.curriculo-lang-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(168, 85, 247, 0.15);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.curriculo-lang-btn .icon-tooltip {
+  top: 110%;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
 
 /* ================= CONTEÚDO ================= */
 
 .curriculo-wrapper {
-  max-width: 950px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 6%;
+  padding: 30px 4% 60px;
 }
 
 .curriculo-container {
@@ -454,29 +605,114 @@
 }
 
 
-/* ================= CARD DO CURRÍCULO ================= */
+/* ================= PDF VIEWER ================= */
 
-.curriculo-card {
+.pdf-viewer-card {
   width: 100%;
   background: linear-gradient(145deg, #0c1022, #0a0f1d);
-  padding: 20px;
+  padding: 16px;
   border-radius: 20px;
-  border: 1px solid rgba(201,88,233,0.15);
-
-  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-  transition: 0.4s ease;
+  border: 1px solid rgba(201,88,233,0.2);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 30px rgba(201,88,233,0.08);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.curriculo-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201,88,233,0.4);
-  box-shadow: 0 0 40px rgba(201,88,233,0.2);
+.pdf-viewer-card:hover {
+  border-color: rgba(201,88,233,0.45);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 50px rgba(201,88,233,0.2);
 }
 
-.curriculo-img {
+.pdf-iframe {
   width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  border: none;
   border-radius: 12px;
   display: block;
+  background: #fff;
+}
+
+
+/* ===================================================== */
+/* ======= RESPONSIVIDADE — PÁGINA CURRÍCULO =========== */
+/* ===================================================== */
+
+/* ---- Tablet ---- */
+@media (max-width: 768px) {
+
+  .curriculo-body {
+    padding-top: 80px;
+  }
+
+  .curriculo-header {
+    padding: 14px 4%;
+    gap: 10px;
+  }
+
+  /* Subtítulo some para economizar espaço */
+  .header-center {
+    display: none;
+  }
+
+  .btn-download {
+    font-size: 0.8rem;
+    letter-spacing: 0;
+  }
+
+  .curriculo-wrapper {
+    padding: 20px 3% 40px;
+  }
+
+  .pdf-iframe {
+    height: 75vh;
+    min-height: 420px;
+  }
+
+}
+
+/* ---- Mobile pequeno ---- */
+@media (max-width: 480px) {
+
+  .curriculo-body {
+    padding-top: 70px;
+  }
+
+  .curriculo-header {
+    padding: 10px 3%;
+  }
+
+  .back-link {
+    font-size: 0.85rem;
+  }
+
+  .btn-download {
+    font-size: 0.75rem;
+  }
+
+  .curriculo-lang-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .curriculo-wrapper {
+    padding: 16px 2% 30px;
+  }
+
+  .pdf-viewer-card {
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .pdf-iframe {
+    height: 70vh;
+    min-height: 360px;
+    border-radius: 8px;
+  }
+
 }
 
 
@@ -499,8 +735,9 @@
 .project-page .project-header {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 30px 80px;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 5%;
   font-size: 14px;
 }
 
@@ -511,6 +748,7 @@
   text-decoration: none;
   color: #fff;
   transition: 0.3s ease;
+  white-space: nowrap;
 }
 
 .project-page .btn-back:hover {
@@ -519,6 +757,42 @@
 
 .project-page .breadcrumb {
   opacity: 0.6;
+  flex: 1;
+  text-align: center;
+}
+
+/* Botão de idioma nas páginas de projeto */
+.proj-lang-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  flex-shrink: 0;
+}
+
+.proj-lang-btn i {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.proj-lang-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(168, 85, 247, 0.15);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.proj-lang-btn .icon-tooltip {
+  top: 110%;
+  font-size: 0.7rem;
+  white-space: nowrap;
 }
 
 /* ===============================
@@ -745,21 +1019,35 @@
 }
 
 /* ===============================
-   RESPONSIVE
+   RESPONSIVE — PROJETOS
 ================================= */
 
-/* ======== TABLET ======== */
+/* ======== TABLET LARGO ======== */
 @media (max-width: 1024px) {
+
+  .project-page .project-header {
+    padding: 16px 4%;
+  }
+
   .project-page .project-container {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    padding: 40px 30px;
+    padding: 40px 5%;
+  }
+
+  .project-page .project-left {
+    width: 100%;
+    max-width: 680px;
   }
 
   .project-page .project-left h1 {
     font-size: 36px;
     text-align: center;
+  }
+
+  .project-page .title-bar {
+    margin: 15px auto 30px;
   }
 
   .project-page .project-description {
@@ -775,91 +1063,122 @@
   }
 
   .project-page .project-buttons {
-    flex-direction: column;
-    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
 
-  /* Tecnologias centralizadas */
   .project-page .technologies {
-    justify-content: center;   /* centraliza os badges */
-    gap: 6px;                  /* pequeno espaço entre badges */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
   }
 
   .project-page .technologies h3 {
+    width: 100%;
     text-align: center;
   }
 
   .project-page .tech-badge {
-    font-size: 10px;           /* tamanho menor para celular */
-    padding: 4px 8px;
+    font-size: 11px;
+    padding: 5px 10px;
   }
-  
+
   .image-wrapper {
     max-width: 80%;
+    width: 100%;
   }
 
   .project-page .features-card {
-    padding: 30px;
+    max-width: 100%;
+    width: 100%;
+    padding: 28px;
+    box-sizing: border-box;
   }
+
+  .project-page .project-right {
+    max-width: 680px;
+    width: 100%;
+  }
+
 }
 
 /* ======== CELULAR ======== */
 @media (max-width: 768px) {
+
+  .project-page .project-header {
+    padding: 14px 4%;
+    gap: 8px;
+  }
+
+  .project-page .breadcrumb {
+    font-size: 0.8rem;
+  }
+
+  .project-page .project-container {
+    padding: 30px 4%;
+    gap: 28px;
+  }
+
   .project-page .project-left h1 {
     font-size: 28px;
+    text-align: center;
+  }
+
+  /* Barra horizontal abaixo do título em mobile */
+  .project-page .title-bar {
+    position: static;
+    width: 60px;
+    height: 5px;
+    margin: 12px auto 24px;
   }
 
   .project-page .project-description {
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.5;
+    text-align: center;
   }
 
   .project-page .stats {
+    justify-content: center;
     gap: 12px;
+    flex-wrap: wrap;
   }
 
   .project-page .stat-card {
-    width: 140px;
-    padding: 16px;
+    width: 130px;
+    padding: 14px;
   }
 
   .project-page .stat-card h3 {
     font-size: 22px;
   }
 
-.project-page .project-buttons {
-  display: flex;
-  flex-direction: row; /* lado a lado */
-  gap: 12px;           /* espaço entre eles */
-  flex-wrap: wrap;      /* permite quebrar em telas muito pequenas */
-  margin: 20px 0;
-  justify-content: center;
-}
+  .project-page .project-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+  }
 
-.project-page .btn-primary,
-.project-page .btn-secondary {
-  padding: 8px 16px;   /* menor que antes */
-  font-size: 0.85rem;  /* tamanho reduzido */
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;            /* espaço entre ícone e texto */
-  justify-content: center;
-  transition: 0.3s ease;
-}
+  .project-page .btn-primary,
+  .project-page .btn-secondary {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+  }
 
-/* Hover */
-.project-page .btn-primary:hover,
-.project-page .btn-secondary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
-
- .project-page .technologies {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
+  .project-page .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 6px;
     margin-top: 12px;
   }
@@ -875,7 +1194,6 @@
     padding: 4px 8px;
   }
 
-
   .image-wrapper {
     max-width: 100%;
   }
@@ -883,43 +1201,60 @@
   .project-page .features-card {
     padding: 20px;
     font-size: 0.9rem;
+    max-width: 100%;
+    box-sizing: border-box;
   }
-
-/* Linha vertical ao lado do título */
-.project-page .project-left {
-  position: relative;
-}
-
-.project-page .title-bar {
-  position: absolute;
-  left: -12px;       /* distância da borda do título */
-  top: 0;
-  width: 6px;        /* espessura da linha */
-  height: 2rem;      /* cobre altura do título */
-  background: linear-gradient(180deg, #6f5cff, #a855f7);
-  border-radius: 20px;
-  margin: 0;          /* remove margin anterior */
-}
 
 }
 
 /* ======== CELULAR PEQUENO ======== */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+
+  .project-page .project-header {
+    padding: 10px 3%;
+    gap: 6px;
+  }
+
+  .project-page .btn-back {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .project-page .breadcrumb {
+    font-size: 0.72rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
+  }
+
   .project-page .project-container {
-    flex-direction: column;
-    padding: 40px 15px;
-    gap: 30px;
+    padding: 20px 4%;
+    gap: 24px;
+  }
+
+  .project-page .project-left h1 {
+    font-size: 24px;
+  }
+
+  .project-page .stat-card {
+    width: 110px;
+    padding: 12px;
+  }
+
+  .project-page .stat-card h3 {
+    font-size: 20px;
   }
 
   .project-page .project-left,
   .image-wrapper,
   .project-page .features-card {
-    max-width: 100%;         /* ocupa toda a largura da tela */
+    max-width: 100%;
   }
 
   .project-page .features-card {
-    padding: 16px;           /* reduz padding interno */
-    font-size: 0.85rem;
+    padding: 14px;
+    font-size: 0.82rem;
   }
 
   .image-wrapper img {

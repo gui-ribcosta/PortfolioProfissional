@@ -53,6 +53,9 @@ html {
   --normal-font-size: 1.15rem;
   --small-font-size: 1rem;
   --smaller-font-size: 0.8rem;
+
+  /* ===== LAYOUT ===== */
+  --header-height: 70px;
 }
 
 

@@ -3,26 +3,42 @@
 // ===========================
 function initMobileMenu() {
   const mobileToggle = document.getElementById('mobileToggle');
-  const mobileNav = document.querySelector('.mobile-nav');
-  const headerDesktop = document.querySelector('.header.hide-on-mobile');
-  const overlay = document.querySelector('.overlay');
+  const mobileNav = document.getElementById('mobileNav');
+  const closeBtn = document.getElementById('closeMobileNav');
+  const overlay = document.getElementById('overlay');
+  const header = document.querySelector('.header');
 
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('active');
-      overlay.classList.toggle('active');
-      headerDesktop.style.display = mobileNav.classList.contains('active') ? 'none' : 'flex';
-    });
-  }
+  if (!mobileToggle || !mobileNav) return;
 
-  const closeMobileBtn = document.querySelector('.close-mobile-nav');
-  if (closeMobileBtn) {
-    closeMobileBtn.addEventListener('click', () => {
+  mobileToggle.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+    overlay?.classList.add('active');
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+    overlay?.classList.remove('active');
+  });
+
+  overlay?.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // Scroll suave + fecha menu ao clicar em link âncora
+  mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+
       mobileNav.classList.remove('active');
-      overlay.classList.remove('active');
-      headerDesktop.style.display = 'flex';
+      overlay?.classList.remove('active');
+
+      const topPos = target.getBoundingClientRect().top + window.scrollY - (header?.offsetHeight || 0);
+      window.scrollTo({ top: topPos, behavior: 'smooth' });
     });
-  }
+  });
 }
 
 // ===========================
@@ -60,8 +76,7 @@ function initRevealOnScroll() {
     const windowHeight = window.innerHeight;
     revealElements.forEach(el => {
       const elementTop = el.getBoundingClientRect().top;
-      const revealPoint = 150;
-      if (elementTop < windowHeight - revealPoint) {
+      if (elementTop < windowHeight - 150) {
         el.classList.add("active");
       } else {
         el.classList.remove("active");
@@ -72,37 +87,3 @@ function initRevealOnScroll() {
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
 }
-
-// ===========================
-// SCROLL SUAVE PARA LINKS MOBILE
-// ===========================
-function initSmoothScroll() {
-  const mobileNav = document.querySelector('.mobile-nav');
-  const overlay = document.querySelector('.overlay');
-  const headerDesktop = document.querySelector('.header.hide-on-mobile');
-
-  const mobileLinks = document.querySelectorAll('.mobile-nav a');
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      const target = document.querySelector(this.getAttribute('href'));
-      if (!target) return;
-
-      const headerOffset = 70;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      mobileNav.classList.remove('active');
-      overlay.classList.remove('active');
-      headerDesktop.style.display = 'flex';
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    });
-  });
-}
-

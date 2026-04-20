@@ -46,7 +46,7 @@
   letter-spacing: 0.5px;
 }
 
-/* Menu Desktop */
+/* Header Center: nav links (desktop only) */
 .header-center {
   display: flex;
   justify-content: center;
@@ -92,29 +92,32 @@
 
 .lang-toggle,
 .theme-toggle {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  border: none;
-  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
   cursor: pointer;
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .lang-toggle:hover,
 .theme-toggle:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(168,85,247,0.6);
+  transform: translateY(-2px);
+  background: rgba(168,85,247,0.15);
+  border-color: rgba(168,85,247,0.4);
+  box-shadow: 0 4px 16px rgba(168,85,247,0.45);
 }
 
 .lang-toggle i,
 .theme-toggle i {
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   color: #fff;
 }
 
@@ -248,7 +251,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.35s ease;
-  z-index: 1100; /* menor que o botão */
+  z-index: 1100;
 }
 
 .overlay.active {
@@ -256,84 +259,63 @@
   visibility: visible;
 }
 
-/* Botão de abrir menu mobile */
+/* Botão de abrir menu mobile — oculto no desktop */
 .mobile-toggle {
-  display: none; /* aparece só no mobile */
-  background: var(--second-bg);
+  background: rgba(255,255,255,0.05);
   color: var(--text);
-  border: none;
-  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
   cursor: pointer;
+  display: none; /* oculto no desktop */
 
-  width: 25px;  /* maior */
-  height: 25px; /* maior */
-  font-size: 2rem; /* tamanho do ícone */
-  
-  display: flex;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+
   align-items: center;
   justify-content: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .mobile-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(168,85,247,0.6);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(168,85,247,0.5);
 }
 
-
-/* ================= MOBILE HEADER ================= */
-
-/* Mobile verdadeiro: até 767px */
-@media (max-width: 767px) {
-  .mobile-toggle {
-    display: block;
-  }
-
-  .nav.header-center {
-    display: none; /* esconde menu desktop */
-  }
-
-  .header-right {
-    position: fixed;
-    left: 67%;
-    transform: translateX(-50%);
-    gap: 10px;
-  }
+/* Ações de idioma/tema no menu mobile */
+.mobile-nav-actions {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  gap: 10px;
 }
 
-/* Tablet grande: 768px a 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .mobile-toggle {
-    display: none; /* tablet usa menu desktop */
-  }
+.mobile-lang-btn,
+.mobile-theme-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-  .nav.header-center {
-    display: flex;
-  }
-
-  .header-right {
-    position: static; /* volta ao normal */
-    transform: none;
-  }
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-/* Desktop: acima de 1024px */
-@media (min-width: 1025px) {
-  .mobile-toggle {
-    display: none;
-  }
-
-  .nav.header-center {
-    display: flex;
-  }
-
-  .header-right {
-    position: static;
-    transform: none;
-  }
+.mobile-lang-btn:hover,
+.mobile-theme-btn:hover {
+  background: rgba(168,85,247,0.2);
+  border-color: rgba(168,85,247,0.5);
 }
-
-
 
 /* =========================================================
    FOOTER
@@ -385,26 +367,39 @@
   margin-top: 16px;
 }
 
-/* =========================================================
-   RESPONSIVO GLOBAL
-========================================================= */
-
 @media (max-width: 767px) {
 
-  .header-center,
-  .header-right {
+  /* Mostra o hambúrguer dentro do header-right */
+  .mobile-toggle {
+    display: flex;
+  }
+
+  /* Oculta só os links de nav — os ícones ficam visíveis */
+  .header-center {
     display: none;
   }
 
-  .mobile-toggle {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-
+  /* Header volta a 2 colunas: logo | direita */
   .header {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
   }
-}
 
+  /* header-right alinhado à direita */
+  .header-right {
+    justify-content: flex-end;
+  }
+
+  /* Tooltips dos botões da direita não saem da tela */
+  .lang-toggle .lang-tooltip,
+  .theme-toggle .theme-tooltip {
+    left: auto;
+    right: 0;
+    transform: translateX(0) scale(0.9);
+  }
+
+  .lang-toggle:hover .lang-tooltip,
+  .theme-toggle:hover .theme-tooltip {
+    transform: translateX(0) scale(1);
+  }
+
+}
