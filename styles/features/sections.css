@@ -1,14 +1,14 @@
-section {
+﻿section {
   position: relative;
 }
 
-/* Evita que o header fixo cubra a section ao usar âncora */
+/* Evita que o header fixo cubra a section ao usar Ã¢ncora */
 section[id] {
   scroll-margin-top: var(--header-height, 70px);
 }
 
 /* =========================================
-   INÍCIO (HERO PRINCIPAL)
+   INÃCIO (HERO PRINCIPAL)
 ========================================= */
 
 .inicio {
@@ -22,7 +22,7 @@ section[id] {
 }
 
 .inicio_left, .inicio_center, .inicio_right {
-  flex: 1 1 300px; /* cresce e encolhe, mínimo 300px */
+  flex: 1 1 300px; /* cresce e encolhe, mÃ­nimo 300px */
   text-align: center;
 }
 
@@ -132,7 +132,7 @@ section[id] {
   z-index: 10;
 }
 
-/* Versão inline (mobile): escondida por padrão */
+/* VersÃ£o inline (mobile): escondida por padrÃ£o */
 .inicio_social_inline {
   display: none;
 }
@@ -246,17 +246,15 @@ section[id] {
     margin-top: 0.3rem;
   }
 
-  /* Oculta ícones sociais fixos na lateral — aparecem inline abaixo */
+  /* Mantém ícones sociais fixos na lateral no mobile */
   .inicio_social {
-    display: none;
+    display: flex;
+    left: 0.5rem;
   }
 
-  /* Ícones inline dentro da section hero */
+  /* Oculta ícones inline */
   .inicio_social_inline {
-    display: flex;
-    justify-content: center;
-    gap: 1.4rem;
-    margin-top: 1.5rem;
+    display: none;
   }
 
   .inicio_social_inline a {
@@ -340,7 +338,7 @@ section[id] {
   font-weight: 600;
 }
 
-/* ================= BOTÕES / SOCIAL ================= */
+/* ================= BOTÃ•ES / SOCIAL ================= */
 .social-area {
   margin-top: 1.5rem;
   display: flex;
@@ -413,7 +411,7 @@ section[id] {
 /* ================= TELA GRANDE (1600px+) ================= */
 @media (min-width: 1600px) {
   .sobre-container {
-    margin-top: 5rem; /* espaço maior em monitores grandes */
+    margin-top: 5rem; /* espaÃ§o maior em monitores grandes */
   }
 
   .sobre-text-impactante {
@@ -428,7 +426,7 @@ section[id] {
 
 
 /* =========================================
-   SECTION — PROJETOS RESPONSIVO
+   SECTION â€” PROJETOS RESPONSIVO
 ========================================= */
 
 /* ================= SCROLL ================= */
@@ -511,7 +509,7 @@ section[id] {
 .project-card {
   width: 100%;
   max-width: 780px;
-  min-height: 520px;           /* altura mínima uniforme */
+  min-height: 520px;           /* altura mÃ­nima uniforme */
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(
@@ -540,7 +538,7 @@ section[id] {
 .project-media {
   padding: 30px;
   background: rgba(0, 0, 0, 0.3);
-  flex-shrink: 0;              /* não encolhe */
+  flex-shrink: 0;              /* nÃ£o encolhe */
 }
 
 .project-media img {
@@ -551,10 +549,10 @@ section[id] {
   border-radius: 8px;
 }
 
-/* CONTEÚDO INTERNO DOS CARDS */
+/* CONTEÃšDO INTERNO DOS CARDS */
 .project-content {
   padding: 28px 32px 34px;
-  flex: 1;                     /* ocupa o espaço restante do card */
+  flex: 1;                     /* ocupa o espaÃ§o restante do card */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -572,7 +570,7 @@ section[id] {
   color: #b8b8d4;
   margin-bottom: 22px;
   line-height: 1.6;
-  flex: 1;                     /* empurra os botões para o fundo */
+  flex: 1;                     /* empurra os botÃµes para o fundo */
   /* limita a 3 linhas e usa ellipsis para textos muito longos */
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -580,7 +578,7 @@ section[id] {
   overflow: hidden;
 }
 
-/* BOTÕES */
+/* BOTÃ•ES */
 .project-actions {
   display: flex;
   justify-content: space-between;
@@ -722,7 +720,7 @@ section[id] {
 
 
 /* =========================================
-   SECTION — CERTIFICADOS
+   SECTION â€” CERTIFICADOS
 ========================================= */
 
 #certificados {
@@ -748,7 +746,7 @@ section[id] {
 }
 
 /* =========================================
-   LADO ESQUERDO — CARDS
+   LADO ESQUERDO â€” CARDS
 ========================================= */
 
 .cert-wrapper {
@@ -761,7 +759,7 @@ section[id] {
   position: relative;
 }
 
-/* TÍTULO */
+/* TÃTULO */
 
 .cert-titulo {
   font-size: var(--h2-font-size);
@@ -786,7 +784,7 @@ section[id] {
 .cert-card-principal {
   flex: 0 0 100%;
   width: 100%;
-  min-height: 186px;           /* altura mínima uniforme */
+  min-height: 186px;           /* altura mÃ­nima uniforme */
 
   display: flex;
   align-items: center;
@@ -831,7 +829,7 @@ section[id] {
 }
 
 /* =========================================
-   LADO DIREITO — TEXTOS
+   LADO DIREITO â€” TEXTOS
 ========================================= */
 
 .estudos-text {
@@ -861,7 +859,7 @@ section[id] {
 }
 
 /* =========================================
-   BOTÃO — VER TODOS
+   BOTÃƒO â€” VER TODOS
 ========================================= */
 
 .btn-ver-todos {
@@ -946,10 +944,10 @@ section[id] {
    RESPONSIVIDADE
 ========================================= */
 
-/* ===== INTERMEDIÁRIO — NOTEBOOKS 13.5" ~ 15" ===== */
+/* ===== INTERMEDIÃRIO â€” NOTEBOOKS 13.5" ~ 15" ===== */
 @media (max-width: 1366px) and (min-width: 1024px) {
   #certificados .container {
-    gap: 50px; /* diminui o espaço entre os lados */
+    gap: 50px; /* diminui o espaÃ§o entre os lados */
   }
 
   .cert-wrapper {
@@ -957,7 +955,7 @@ section[id] {
   }
 
   .estudos-text {
-    flex: 1; /* garante que ocupe o resto do espaço */
+    flex: 1; /* garante que ocupe o resto do espaÃ§o */
   }
 }
 
@@ -1006,7 +1004,7 @@ section[id] {
     .carrossel-ui-mobile {
     display: flex !important;
     position: absolute;
-    bottom: 20px; /* ou 50px, ajusta conforme necessário */
+    bottom: 20px; /* ou 50px, ajusta conforme necessÃ¡rio */
     left: 50%;
     transform: translateX(-50%);
     gap: 16px;
@@ -1039,7 +1037,7 @@ section[id] {
 }
 
 /* =========================================
-   SECTION — CONTATO
+   SECTION â€” CONTATO
 ========================================= */
 
 #contato {
@@ -1139,7 +1137,7 @@ section[id] {
   }
 
   .contato-cards {
-    flex-wrap: nowrap; /* não empilha os cards */
+    flex-wrap: nowrap; /* nÃ£o empilha os cards */
     justify-content: center;
     gap: 16px;
   }
@@ -1164,7 +1162,7 @@ section[id] {
   }
 
   .contato-historia {
-    font-size: 1.6rem; /* títulos menores */
+    font-size: 1.6rem; /* tÃ­tulos menores */
   }
 
   .contato-convite {
@@ -1173,8 +1171,8 @@ section[id] {
   }
 
   .contato-cards {
-    flex-direction: row; /* ícones um ao lado do outro */
-    flex-wrap: wrap; /* quebra para a próxima linha se necessário */
+    flex-direction: row; /* Ã­cones um ao lado do outro */
+    flex-wrap: wrap; /* quebra para a prÃ³xima linha se necessÃ¡rio */
     justify-content: center;
     gap: 12px;
   }
