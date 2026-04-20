@@ -136,3 +136,38 @@ h3 {
     opacity: 1;
   }
 }
+/* ================= TOOLTIP GLOBAL ================= */
+.icon-tooltip {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: #111;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+  z-index: 9999;
+}
+.icon-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #111 transparent;
+}
+.icon-btn:hover .icon-tooltip,
+.tech-item:hover .icon-tooltip,
+.proj-lang-btn:hover .icon-tooltip,
+.curriculo-lang-btn:hover .icon-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}

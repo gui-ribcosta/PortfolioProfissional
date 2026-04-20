@@ -59,7 +59,7 @@ const translations = {
 
     // ==== SOBRE ====
     "btn_voltar": "<i class=\"fa-solid fa-angle-left\"></i> Voltar ao Site",
-    "theme_light_tooltip": "MODO CLARO",
+    "theme_light_tooltip": "EM BREVE...",
 
     "sobre_exp_title": "Experiência",
     "sobre_exp_date1": "Março, 2026 — Atualmente",
@@ -193,7 +193,7 @@ const translations = {
 
     // ==== SOBRE ====
     "btn_voltar": "<i class=\"fa-solid fa-angle-left\"></i> Back to Site",
-    "theme_light_tooltip": "LIGHT MODE",
+    "theme_light_tooltip": "COMING SOON...",
 
     "sobre_exp_title": "Experience",
     "sobre_exp_date1": "March, 2026 — Present",

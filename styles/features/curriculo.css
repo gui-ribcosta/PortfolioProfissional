@@ -1,12 +1,12 @@
 ﻿/* ===================================================== */
-/* ================== PÃGINA CURRÃCULO ================= */
+/* ================== PÃƒÂGINA CURRÃƒÂCULO ================= */
 /* ===================================================== */
 
 .curriculo-body {
   background: #111;
   color: var(--text);
   font-family: 'Inter', sans-serif;
-  padding-top: 110px; /* espaÃ§o para header fixo */
+  padding-top: 110px; /* espaÃƒÂ§o para header fixo */
 }
 
 
@@ -45,7 +45,7 @@
 }
 
 
-/* ================= BOTÃ•ES ================= */
+/* ================= BOTÃƒâ€¢ES ================= */
 
 .back-link {
   color: var(--text);
@@ -77,15 +77,16 @@
   border-color: var(--accent);
 }
 
-/* Agrupa download + botÃ£o de idioma no lado direito */
+/* Agrupa download + botÃƒÂ£o de idioma no lado direito */
 .curriculo-header-right {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-/* BotÃ£o de idioma no currÃ­culo */
+/* BotÃƒÂ£o de idioma no currÃƒÂ­culo */
 .curriculo-lang-btn {
+  padding: 0;
   width: 40px;
   height: 40px;
   border-radius: 10px;
@@ -112,14 +113,10 @@
   border-color: rgba(168, 85, 247, 0.5);
 }
 
-.curriculo-lang-btn .icon-tooltip {
-  top: 110%;
-  font-size: 0.7rem;
-  white-space: nowrap;
-}
 
 
-/* ================= CONTEÃšDO ================= */
+
+/* ================= CONTEÃƒÅ¡DO ================= */
 
 .curriculo-wrapper {
   max-width: 1000px;
@@ -168,22 +165,28 @@
 
 
 /* ===================================================== */
-/* ======= RESPONSIVIDADE â€” PÃGINA CURRÃCULO =========== */
+/* ======= RESPONSIVIDADE Ã¢â‚¬â€ PÃƒÂGINA CURRÃƒÂCULO =========== */
 /* ===================================================== */
 
 /* ---- Tablet ---- */
 @media (max-width: 768px) {
+  .curriculo-header-right {
+    gap: 8px;
+  }
 
   .curriculo-body {
     padding-top: 80px;
   }
 
   .curriculo-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 14px 4%;
     gap: 10px;
   }
 
-  /* SubtÃ­tulo some para economizar espaÃ§o */
+  /* SubtÃƒÂ­tulo some para economizar espaÃƒÂ§o */
   .header-center {
     display: none;
   }
@@ -206,12 +209,18 @@
 
 /* ---- Mobile pequeno ---- */
 @media (max-width: 480px) {
+  .curriculo-header-right {
+    gap: 6px;
+  }
 
   .curriculo-body {
     padding-top: 70px;
   }
 
   .curriculo-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 3%;
   }
 
@@ -224,6 +233,7 @@
   }
 
   .curriculo-lang-btn {
+  padding: 0;
     width: 34px;
     height: 34px;
   }

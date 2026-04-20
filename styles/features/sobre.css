@@ -1,5 +1,5 @@
 ﻿/* ===================================================== */
-/* ================== PÃGINA SOBRE ===================== */
+/* ================== PÃƒÂGINA SOBRE ===================== */
 /* ===================================================== */
 
 .sobre-body {
@@ -8,17 +8,17 @@
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
 
-  /* EspaÃ§o para compensar o header fixo */
+  /* EspaÃƒÂ§o para compensar o header fixo */
   padding-top: 90px;
 }
 
 
-/* Container principal que envolve todas as seÃ§Ãµes */
+/* Container principal que envolve todas as seÃƒÂ§ÃƒÂµes */
 .sobre-wrapper {
   max-width: 1800px;
   margin: 0 auto;
 
-  /* ðŸ”½ ESPAÃ‡AMENTO ENTRE SEÃ‡Ã•ES (REDUZIDO DE 80px PARA 60px) */
+  /* Ã°Å¸â€Â½ ESPAÃƒâ€¡AMENTO ENTRE SEÃƒâ€¡Ãƒâ€¢ES (REDUZIDO DE 80px PARA 60px) */
   padding: 40px 6%;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@
 }
 
 
-/* Container dos botÃµes da direita */
+/* Container dos botÃƒÂµes da direita */
 .header-right {
   display: flex;
   align-items: center;
@@ -53,7 +53,7 @@
 }
 
 
-/* BotÃ£o base minimalista */
+/* BotÃƒÂ£o base minimalista */
 .icon-btn {
   width: 50px;
   height: 50px;
@@ -75,7 +75,7 @@
   color: #fff;
 }
 
-/* Hover com leve elevaÃ§Ã£o */
+/* Hover com leve elevaÃƒÂ§ÃƒÂ£o */
 .icon-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(168,85,247,0.6);
@@ -119,18 +119,19 @@
 }
 
 /* Exibir tooltip no hover */
-.icon-btn:hover .icon-tooltip {
+.icon-btn:hover .icon-tooltip,
+.tech-item:hover .icon-tooltip {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
 
 
 /* ===================================================== */
-/* ================== SEÃ‡ÃƒO EXPERIÃŠNCIA ================= */
+/* ================== SEÃƒâ€¡ÃƒÆ’O EXPERIÃƒÅ NCIA ================= */
 /* ===================================================== */
 
 .experiencia-section {
-  /* ðŸ”½ REDUZIDO DE 100px PARA 60px */
+  /* Ã°Å¸â€Â½ REDUZIDO DE 100px PARA 60px */
   padding: 60px 8%;
   background: #050816;
 }
@@ -148,7 +149,7 @@
 }
 
 
-/* Card de experiÃªncia */
+/* Card de experiÃƒÂªncia */
 .experiencia-card {
   background: linear-gradient(145deg, #0c1022, #0a0f1d);
   padding: 40px;
@@ -200,11 +201,12 @@
 
 
 /* ===================================================== */
-/* ================= FORMAÃ‡ÃƒO ACADÃŠMICA ================= */
+/* ================= FORMAÃƒâ€¡ÃƒÆ’O ACADÃƒÅ MICA ================= */
 /* ===================================================== */
 
 .formacao-section {
   padding: 60px 8%;
+  background: #050816;
 }
 
 .section-title {
@@ -220,7 +222,7 @@
 }
 
 
-/* Card de formaÃ§Ã£o */
+/* Card de formaÃƒÂ§ÃƒÂ£o */
 .formacao-card {
   background: #0a0f1f;
   border: 1px solid rgba(201,88,233,0.15);
@@ -283,12 +285,13 @@
 
 
 /* ===================================================== */
-/* ================= STACK TECNOLÃ“GICA ================= */
+/* ================= STACK TECNOLÃƒâ€œGICA ================= */
 /* ===================================================== */
 
 .tech-stack {
-  /* ðŸ”½ REDUZIDO DE 80px PARA 60px */
+  /* Ã°Å¸â€Â½ REDUZIDO DE 80px PARA 60px */
   padding: 60px 8%;
+  background: #050816;
 }
 
 .stack-wrapper {
@@ -330,21 +333,33 @@
   text-transform: uppercase;
 }
 
-.stack-icons i {
+.stack-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.tech-item {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.tech-item i {
   font-size: 42px;
   color: #fff;
-  margin: 0 12px;
   transition: 0.3s ease;
 }
 
-.stack-icons i:hover {
+.tech-item i:hover {
   transform: scale(1.2);
   color: #c958e9;
 }
 
 
 /* ===================================================== */
-/* ========= RESPONSIVIDADE â€” PÃGINA SOBRE ============= */
+/* ========= RESPONSIVIDADE Ã¢â‚¬â€ PÃƒÂGINA SOBRE ============= */
 /* ===================================================== */
 
 /* ---- Tablet largo ---- */
@@ -371,16 +386,16 @@
 /* ---- Tablet / Mobile ---- */
 @media (max-width: 768px) {
 
-  /* Header empilha verticalmente */
+  /* MantÃ©m o header em uma Ãºnica linha, como no index */
   .sobre-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 14px 5%;
   }
 
   .header-right {
-    align-self: flex-end;
+    align-self: auto;
   }
 
   /* Wrapper principal */
@@ -394,24 +409,24 @@
     padding-top: 120px;
   }
 
-  /* SeÃ§Ãµes internas */
+  /* SeÃƒÂ§ÃƒÂµes internas */
   .experiencia-section,
   .formacao-section,
   .tech-stack {
     padding: 40px 5%;
   }
 
-  /* Cards de experiÃªncia */
+  /* Cards de experiÃƒÂªncia */
   .experiencia-card {
     padding: 24px;
   }
 
-  /* Cards de formaÃ§Ã£o */
+  /* Cards de formaÃƒÂ§ÃƒÂ£o */
   .formacao-card {
     padding: 24px;
   }
 
-  /* Stack tecnolÃ³gica */
+  /* Stack tecnolÃƒÂ³gica */
   .stack-row {
     flex-direction: column;
     align-items: center;
@@ -437,6 +452,9 @@
   }
 
   .sobre-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 12px 4%;
     gap: 8px;
   }
