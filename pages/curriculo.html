@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <!-- CONFIGURAÇÕES -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Currículo de Guilherme Ribeiro - Visualize ou faça o download do meu currículo profissional focado em tecnologia.">
+  <meta name="keywords" content="Currículo, Resume, Guilherme Ribeiro, Desenvolvedor Web, PDF, Download">
+  <meta name="author" content="Guilherme Ribeiro">
+  <meta property="og:title" content="Currículo | Guilherme Ribeiro">
+  <meta property="og:description" content="Visualize ou faça o download do meu currículo profissional focado em tecnologia.">
+  <meta property="og:type" content="profile">
+  <title>Currículo | Guilherme Ribeiro</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="../styles/base/global.css">
+  <link rel="stylesheet" href="../styles/features/curriculo.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+
+<body class="curriculo-body">
+
+  <!-- ================= HEADER FIXO ================= -->
+  <header class="curriculo-header">
+
+    <!-- Botão Voltar -->
+    <a href="../index.html" class="back-link" data-i18n="btn_voltar"><i class="fa-solid fa-angle-left"></i>
+      Voltar ao Site
+    </a>
+
+    <!-- Título -->
+    <div class="header-center">
+      <p class="curriculo-subtitle" data-i18n="cv_subtitle">
+        Versão resumida para visualização rápida.
+      </p>
+    </div>
+
+    <!-- Direita: Download + Idioma -->
+    <div class="curriculo-header-right">
+      <a
+        id="downloadBtn"
+        href="../assets/files/Currículo_Guilherme_Tecnologia.pdf"
+        download
+        class="btn-download"
+        data-i18n="cv_download"
+        data-pdf-pt="../assets/files/Currículo_Guilherme_Tecnologia.pdf"
+        data-pdf-en="../assets/files/Resume_Guilherme_Technology.pdf"
+      ><i class="fa-solid fa-download"></i> BAIXAR PDF
+      </a>
+
+      <!-- Botão de Idioma -->
+      <button class="icon-btn curriculo-lang-btn" id="langToggle" aria-label="Toggle language">
+        <i class="fa-solid fa-language"></i>
+        <span class="icon-tooltip">TRANSLATE TO ENGLISH</span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- ================= CONTEÚDO ================= -->
+  <main class="curriculo-wrapper">
+
+    <div class="pdf-viewer-card">
+      <iframe
+        id="pdfViewer"
+        class="pdf-iframe"
+        src="../assets/files/Currículo_Guilherme_Tecnologia.pdf"
+        title="Currículo Guilherme Ribeiro"
+        data-pdf-pt="../assets/files/Currículo_Guilherme_Tecnologia.pdf"
+        data-pdf-en="../assets/files/Resume_Guilherme_Technology.pdf"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+  </main>
+
+  <script src="../scripts/core/translations.js"></script>
+  <script src="../scripts/core/i18n.js"></script>
+  <script src="../scripts/features/resume.js"></script>
+</body>
+
+</html>

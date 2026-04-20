@@ -1,0 +1,470 @@
+﻿/* ===================================================== */
+/* ================== PÃGINA SOBRE ===================== */
+/* ===================================================== */
+
+.sobre-body {
+  background: #111;
+  color: var(--text, #fff);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+
+  /* EspaÃ§o para compensar o header fixo */
+  padding-top: 90px;
+}
+
+
+/* Container principal que envolve todas as seÃ§Ãµes */
+.sobre-wrapper {
+  max-width: 1800px;
+  margin: 0 auto;
+
+  /* ðŸ”½ ESPAÃ‡AMENTO ENTRE SEÃ‡Ã•ES (REDUZIDO DE 80px PARA 60px) */
+  padding: 40px 6%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+
+/* ===================================================== */
+/* ======================= HEADER ====================== */
+/* ===================================================== */
+
+.sobre-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 6%;
+  z-index: 1000;
+}
+
+
+/* Container dos botÃµes da direita */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+/* BotÃ£o base minimalista */
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-btn i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Hover com leve elevaÃ§Ã£o */
+.icon-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(168,85,247,0.6);
+}
+
+
+/* ================= TOOLTIP ================= */
+
+.icon-tooltip {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+
+  background: #111;
+  color: #fff;
+
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  font-size: 0.75rem;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+/* Setinha do tooltip */
+.icon-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #111 transparent;
+}
+
+/* Exibir tooltip no hover */
+.icon-btn:hover .icon-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+
+/* ===================================================== */
+/* ================== SEÃ‡ÃƒO EXPERIÃŠNCIA ================= */
+/* ===================================================== */
+
+.experiencia-section {
+  /* ðŸ”½ REDUZIDO DE 100px PARA 60px */
+  padding: 60px 8%;
+  background: #050816;
+}
+
+.roxo {
+  color: var(--accent);
+}
+
+.experiencia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+
+  gap: 40px;
+  margin-top: 40px;
+}
+
+
+/* Card de experiÃªncia */
+.experiencia-card {
+  background: linear-gradient(145deg, #0c1022, #0a0f1d);
+  padding: 40px;
+  border-radius: 28px;
+
+  border: 1px solid rgba(201,88,233,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+
+  transition: 0.4s ease;
+}
+
+.experiencia-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(201,88,233,0.4);
+  box-shadow: 0 0 40px rgba(201,88,233,0.2);
+}
+
+.periodo-badge {
+  display: inline-block;
+  background: rgba(201,88,233,0.2);
+  color: #c958e9;
+
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+
+  margin-bottom: 20px;
+}
+
+.empresa {
+  display: block;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.descricao {
+  text-align: justify;
+}
+
+.pontos {
+  margin-top: 1.5rem; /* reduzido de 2rem */
+  color: var(--muted);
+}
+
+.pontos span {
+  color: var(--accent);
+}
+
+
+/* ===================================================== */
+/* ================= FORMAÃ‡ÃƒO ACADÃŠMICA ================= */
+/* ===================================================== */
+
+.formacao-section {
+  padding: 60px 8%;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.formacao-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+
+/* Card de formaÃ§Ã£o */
+.formacao-card {
+  background: #0a0f1f;
+  border: 1px solid rgba(201,88,233,0.15);
+
+  padding: 40px;
+  border-radius: 24px;
+  text-align: left;
+
+  transition: 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.formacao-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+/* Texto dos Cards */
+.formacao-card h3 { 
+  font-size: var(--h3-font-size); 
+  margin: 20px 0; 
+} 
+
+.instituicao { 
+  display: block; 
+  color: var(--text); 
+  font-weight: 600; 
+  margin-bottom: 8px; 
+  font-size: var(--small-font-size); 
+} 
+
+.periodo { 
+  display: block; 
+  color: var(--muted); 
+  margin-bottom: 20px; 
+} 
+
+.formacao-card p { 
+  color: #bbb; 
+  line-height: 1.6; 
+  font-size: var(--smaller-font-size); 
+}
+
+
+/* Badge de status */
+.status {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.andamento {
+  background: rgba(0, 102, 255, 0.2);
+  color: #4ea1ff;
+}
+
+
+/* ===================================================== */
+/* ================= STACK TECNOLÃ“GICA ================= */
+/* ===================================================== */
+
+.tech-stack {
+  /* ðŸ”½ REDUZIDO DE 80px PARA 60px */
+  padding: 60px 8%;
+}
+
+.stack-wrapper {
+  margin-top: 40px; /* reduzido de 50px */
+}
+
+.stack-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.center-row {
+  margin-top: 30px; /* reduzido de 40px */
+}
+
+.stack-card {
+  background: #0a0f1f;
+  padding: 30px;
+  border-radius: 18px;
+
+  width: clamp(280px, 42vw, 420px);
+  border: 1px solid rgba(201,88,233,0.2);
+
+  transition: 0.3s ease;
+}
+
+.stack-card:hover {
+  transform: translateY(-6px);
+  border-color: #c958e9;
+}
+
+.stack-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.stack-icons i {
+  font-size: 42px;
+  color: #fff;
+  margin: 0 12px;
+  transition: 0.3s ease;
+}
+
+.stack-icons i:hover {
+  transform: scale(1.2);
+  color: #c958e9;
+}
+
+
+/* ===================================================== */
+/* ========= RESPONSIVIDADE â€” PÃGINA SOBRE ============= */
+/* ===================================================== */
+
+/* ---- Tablet largo ---- */
+@media (max-width: 1024px) {
+
+  .sobre-header {
+    padding: 16px 4%;
+  }
+
+  .experiencia-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formacao-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-card {
+    width: clamp(260px, 80vw, 420px);
+  }
+
+}
+
+/* ---- Tablet / Mobile ---- */
+@media (max-width: 768px) {
+
+  /* Header empilha verticalmente */
+  .sobre-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 5%;
+  }
+
+  .header-right {
+    align-self: flex-end;
+  }
+
+  /* Wrapper principal */
+  .sobre-wrapper {
+    padding: 20px 5% 40px;
+    gap: 40px;
+  }
+
+  /* Compensar header maior */
+  .sobre-body {
+    padding-top: 120px;
+  }
+
+  /* SeÃ§Ãµes internas */
+  .experiencia-section,
+  .formacao-section,
+  .tech-stack {
+    padding: 40px 5%;
+  }
+
+  /* Cards de experiÃªncia */
+  .experiencia-card {
+    padding: 24px;
+  }
+
+  /* Cards de formaÃ§Ã£o */
+  .formacao-card {
+    padding: 24px;
+  }
+
+  /* Stack tecnolÃ³gica */
+  .stack-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stack-card {
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+}
+
+/* ---- Mobile pequeno ---- */
+@media (max-width: 480px) {
+
+  .sobre-body {
+    padding-top: 130px;
+  }
+
+  .sobre-header {
+    padding: 12px 4%;
+    gap: 8px;
+  }
+
+  .experiencia-card,
+  .formacao-card {
+    padding: 18px;
+  }
+
+  .experiencia-card h3 {
+    font-size: 1rem;
+  }
+
+  .descricao,
+  .pontos {
+    font-size: 0.88rem;
+  }
+
+  .stack-icons i {
+    font-size: 32px;
+    margin: 0 8px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+}
+
+
+

@@ -1,0 +1,77 @@
+# ================================
+# Sistema Operacional
+# ================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ================================
+# Editores e IDEs
+# ================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# ================================
+# Node / NPM (caso use no futuro)
+# ================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ================================
+# Build / Dist
+# ================================
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.next/
+
+# ================================
+# Variáveis de ambiente (NUNCA expor)
+# ================================
+.env
+.env.*
+.env.local
+.env.development
+.env.production
+!.env.example
+
+# ================================
+# Logs
+# ================================
+*.log
+logs/
+
+# ================================
+# Arquivos temporários
+# ================================
+*.tmp
+*.bak
+*.swp
+*.orig
+
+# ================================
+# Arquivos sensíveis do projeto
+# (PDFs pessoais ficam em assets/files/
+#  mas o CV em inglês ainda não existe)
+# ================================
+assets/files/Resume_Guilherme_Technology.pdf

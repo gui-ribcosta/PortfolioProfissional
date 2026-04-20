@@ -53,6 +53,6 @@ Próximas atualizaçÕes:
 ## 📫 Contato
 
 - LinkedIn: [Clique Aqui!](https://www.linkedin.com/in/guiribcosta/)
-- Instagram: [Clique Aqui!](https://instagram.com/gui_ribcosta)
+- Instagram: [Clique Aqui!](https://instagram.com/gui_ribecosta)
 - E-mail: grcm171914@gmail.com
 

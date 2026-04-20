@@ -87,3 +87,69 @@ function initRevealOnScroll() {
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
 }
+
+// ===========================
+// ESTRELAS DINÂMICAS (PERFORMANCE)
+// ===========================
+function initStars() {
+  const starsContainer = document.querySelector('.stars');
+  if (!starsContainer) return;
+
+  // Define a quantidade de estrelas
+  const numStars = 40;
+
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    // Posição aleatória
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    
+    // Duração e delay aleatórios
+    const duration = 1.5 + Math.random() * 2;
+    const delay = Math.random() * 2;
+
+    star.style.left = `${x}%`;
+    star.style.top = `${y}%`;
+    star.style.setProperty('--twinkle-duration', `${duration}s`);
+    star.style.animationDelay = `${delay}s`;
+
+    starsContainer.appendChild(star);
+  }
+}
+
+// ===========================
+// OFUSCAÇÃO DE CONTATOS
+// ===========================
+function initContactProtection() {
+  const contactBtns = document.querySelectorAll('.js-contact');
+  if (!contactBtns.length) return;
+
+  contactBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = btn.getAttribute('data-type');
+      const info = btn.getAttribute('data-info');
+      
+      if (!type || !info) return;
+      
+      try {
+        const decoded = atob(info);
+        if (type === 'email') {
+          window.location.href = `mailto:${decoded}`;
+        } else if (type === 'wa') {
+          window.open(`https://wa.me/${decoded}`, '_blank', 'noopener,noreferrer');
+        }
+      } catch (err) {
+        console.error('Erro ao decodificar contato', err);
+      }
+    });
+  });
+}
+
+// Executar as inicializações auto-contidas (as que não são chamadas no main.js)
+document.addEventListener("DOMContentLoaded", () => {
+  initStars();
+  initContactProtection();
+});

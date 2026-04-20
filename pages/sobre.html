@@ -5,15 +5,21 @@
   <!-- CONFIGURAÇÕES BÁSICAS -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre Guilherme Ribeiro - Conheça minha trajetória, habilidades e formação acadêmica como desenvolvedor web.">
+  <meta name="keywords" content="Sobre mim, Guilherme Ribeiro, Desenvolvedor Web, Currículo, Trajetória, Habilidades">
+  <meta name="author" content="Guilherme Ribeiro">
+  <meta property="og:title" content="Sobre | Guilherme Ribeiro">
+  <meta property="og:description" content="Conheça minha trajetória, habilidades e formação acadêmica como desenvolvedor web.">
+  <meta property="og:type" content="profile">
 
   <!-- TÍTULO DA PÁGINA (aba do navegador) -->
   <title>Sobre | Guilherme Ribeiro</title>
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- ESTILOS GERAIS DO PROJETO -->
-  <link rel="stylesheet" href="styles/global.css">      <!-- Estilos globais -->
-  <link rel="stylesheet" href="styles/components.css">  <!-- Componentes reutilizáveis -->
-  <link rel="stylesheet" href="styles/pages.css">       <!-- Estilos específicos da página Sobre -->
+  <link rel="stylesheet" href="../styles/base/global.css">
+  <link rel="stylesheet" href="../styles/components/components.css">
+  <link rel="stylesheet" href="../styles/features/sobre.css">
 
   <!-- FONT AWESOME (ícones principais usados na stack e header) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -32,7 +38,7 @@
   <header class="sobre-header">
 
     <!-- BOTÃO DE VOLTAR (lado esquerdo) -->
-    <a href="index.html" class="back-link" data-i18n="btn_voltar"><i class="fa-solid fa-angle-left"></i>
+    <a href="../index.html" class="back-link" data-i18n="btn_voltar"><i class="fa-solid fa-angle-left"></i>
       Voltar ao Site
     </a>
 
@@ -224,9 +230,9 @@
 
   </main>
 
-<script src="scripts/ui.js"></script>
-<script src="scripts/translations.js"></script>
-<script src="scripts/i18n.js"></script>
+<script src="../scripts/features/ui.js"></script>
+<script src="../scripts/core/translations.js"></script>
+<script src="../scripts/core/i18n.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     initThemeToggle();
