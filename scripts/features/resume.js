@@ -9,10 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const pdfContainer = document.getElementById('pdfContainer');
   const downloadBtn = document.getElementById('downloadBtn');
 
-  if (!pdfContainer || !downloadBtn || typeof pdfjsLib === 'undefined') return;
+  // Garante acesso à variável global do PDF.js (usando a versão local carregada no HTML)
+  const pdfjs = window.pdfjsLib || window['pdfjs-dist/build/pdf'];
 
-  // Configura o worker do pdf.js
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  if (!pdfContainer || !downloadBtn) return;
+
+  if (!pdfjs) {
+    console.error("PDF.js não encontrado. Verifique se o arquivo scripts/libs/pdf.min.js existe.");
+    pdfContainer.innerHTML = '<p style="color: white; text-align: center; padding: 20px;">Erro ao carregar o visualizador. Verifique os arquivos do projeto.</p>';
+    return;
+  }
+
+  // Configura o worker do pdf.js para o arquivo LOCAL baixado
+  pdfjs.GlobalWorkerOptions.workerSrc = '../scripts/libs/pdf.worker.min.js';
 
   let currentRenderTasks = [];
   let currentPdfDoc = null;
@@ -26,32 +35,32 @@ document.addEventListener('DOMContentLoaded', () => {
       // Limpa as páginas/tasks anteriores
       currentRenderTasks.forEach(task => task.cancel());
       currentRenderTasks = [];
-      pdfContainer.innerHTML = ''; // Limpa os canvases existentes
+      pdfContainer.innerHTML = '<p style="color: white; text-align: center; padding: 40px;"><i class="fa-solid fa-spinner fa-spin"></i> Carregando currículo...</p>';
 
-      const loadingTask = pdfjsLib.getDocument(url);
+      const loadingTask = pdfjs.getDocument({
+        url: url,
+        cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+        cMapPacked: true,
+      });
+      
       currentPdfDoc = await loadingTask.promise;
+      pdfContainer.innerHTML = ''; // Limpa o loading
 
       const numPages = currentPdfDoc.numPages;
-      const containerWidth = pdfContainer.clientWidth - 32; // descontando padding do container
-
+      const containerWidth = pdfContainer.clientWidth - 32;
+      
       for (let i = 1; i <= numPages; i++) {
         const page = await currentPdfDoc.getPage(i);
-
-        // Pega o viewport com escala 1 para saber o tamanho original
         const unscaledViewport = page.getViewport({ scale: 1.0 });
-
-        // Ajusta a escala para caber na largura do container
         let scale = containerWidth / unscaledViewport.width;
-        if (scale > 1.5) scale = 1.5; // Evita upscale exagerado
+        if (scale > 1.5) scale = 1.5;
 
         const viewport = page.getViewport({ scale: scale });
-
-        // Cria o canvas para a página
         const canvas = document.createElement('canvas');
         canvas.className = 'pdf-canvas';
         canvas.height = viewport.height;
         canvas.width = viewport.width;
-
+        
         pdfContainer.appendChild(canvas);
 
         const context = canvas.getContext('2d');
@@ -62,11 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const renderTask = page.render(renderContext);
         currentRenderTasks.push(renderTask);
-
-        await renderTask.promise; // Espera a renderização terminar para passar pra próxima
+        await renderTask.promise;
       }
     } catch (error) {
       console.error('Erro ao renderizar o PDF:', error);
+      pdfContainer.innerHTML = '<p style="color: #ff4444; text-align: center; padding: 20px;">Não foi possível carregar o arquivo PDF.</p>';
     }
   }
 
@@ -87,13 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPdf(src);
   }
 
-  // Aplica no carregamento conforme idioma salvo
   const savedLang = localStorage.getItem('lang') || 'pt-BR';
-
-  // Pequeno delay para garantir que os estilos CSS foram aplicados antes de medir
   setTimeout(() => applyPdf(savedLang), 100);
 
-  // Escuta o clique no botão de idioma
   if (langToggle) {
     langToggle.addEventListener('click', () => {
       setTimeout(() => {
@@ -103,12 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Redesenha no resize para manter responsivo
   window.addEventListener('resize', () => {
     clearTimeout(window.resizeTimer);
     window.resizeTimer = setTimeout(() => {
-      const currentLang = localStorage.getItem('lang') || 'pt-BR';
-      applyPdf(currentLang);
+      if (currentPdfDoc) {
+        const currentLang = localStorage.getItem('lang') || 'pt-BR';
+        applyPdf(currentLang);
+      }
     }, 300);
   });
 });
