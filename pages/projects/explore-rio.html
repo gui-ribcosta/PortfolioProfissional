@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,85 +14,96 @@
   <link rel="stylesheet" href="../../styles/base/global.css">
   <link rel="stylesheet" href="../../styles/features/projects.css">
 
-        <!-- FONT AWESOME -->
+  <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
+
 <body class="project-page">
 
-<header class="project-header">
-  <a href="../../index.html" class="btn-back" data-i18n="proj_back"><i class="fa-solid fa-angle-left"></i> Voltar</a>
-  <span class="breadcrumb" data-i18n="proj_breadcrumb_explore">Projetos > Explore Rio</span>
+  <header class="project-header">
+    <a href="../../index.html" class="btn-back" data-i18n="proj_back"><i class="fa-solid fa-angle-left"></i> Voltar</a>
+    <span class="breadcrumb" data-i18n="proj_breadcrumb_explore">Projetos > Explore Rio</span>
 
-  <div style="display: flex; gap: 12px;">
-    <button id="langToggle" class="icon-btn proj-lang-btn" aria-label="Toggle language">
-      <i class="fa-solid fa-language"></i>
-      <span class="icon-tooltip">TRANSLATE TO ENGLISH</span>
-    </button>
-    <button class="icon-btn proj-lang-btn" id="themeToggle" aria-label="Toggle theme">
-      <i class="fa-solid fa-circle-half-stroke"></i>
-      <span class="icon-tooltip" data-i18n="theme_light_tooltip">EM BREVE...</span>
-    </button>
-  </div>
-</header>
+    <div style="display: flex; gap: 12px;">
+      <button id="langToggle" class="icon-btn proj-lang-btn" aria-label="Toggle language">
+        <i class="fa-solid fa-language"></i>
+        <span class="icon-tooltip">TRANSLATE TO ENGLISH</span>
+      </button>
+      <button class="icon-btn proj-lang-btn" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+        <span class="icon-tooltip" data-i18n="theme_light_tooltip">EM BREVE...</span>
+      </button>
+    </div>
+  </header>
 
-<section class="project-container">
+  <section class="project-container">
 
-  <!-- LADO ESQUERDO -->
-  <div class="project-left">
-    <h1 class="portfolio-title"><span>Explore</span> Rio</h1>
-    <div class="title-bar"></div>
+    <!-- LADO ESQUERDO -->
+    <div class="project-left">
+      <h1 class="portfolio-title"><span>Explore</span> Rio</h1>
+      <div class="title-bar"></div>
 
-    <div class="status desenvolvimento" data-i18n="proj_status_dev">Em desenvolvimento</div>
+      <div class="status desenvolvimento" data-i18n="proj_status_dev">Em desenvolvimento</div>
 
-    <p class="project-description" data-i18n="proj_explore_pagedesc">
-      Projeto turístico que apresenta os principais pontos turísticos do Rio de Janeiro, permitindo criar roteiros personalizados. Usuários podem filtrar por categoria, região, período e duração,tornando o planejamento de viagens intuitivo e visual.
-    </p>
+      <p class="project-description" data-i18n="proj_explore_pagedesc">
+        Projeto turístico que apresenta os principais pontos turísticos do Rio de Janeiro, permitindo criar roteiros
+        personalizados. Usuários podem filtrar por categoria, região, período e duração,tornando o planejamento de
+        viagens intuitivo e visual.
+      </p>
 
-    <div class="stats">
-      <div class="stat-card">
-        <h3>3</h3>
-        <p data-i18n="proj_stats_tech">Total Tecnologias</p>
+      <div class="stats">
+        <div class="stat-card">
+          <h3>3</h3>
+          <p data-i18n="proj_stats_tech">Total Tecnologias</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>6</h3>
+          <p data-i18n="proj_stats_func">Funcionalidades</p>
+        </div>
       </div>
 
-      <div class="stat-card">
-        <h3>6</h3>
-        <p data-i18n="proj_stats_func">Funcionalidades</p>
+      <div class="project-buttons">
+        <a href="https://explore-rio.vercel.app/" class="btn-primary" target="_blank" rel="noopener noreferrer"
+          data-i18n="proj_vercel"><i class="fa-solid fa-arrow-up-right-from-square"></i> Vercel</a>
+        <a href="https://github.com/gui-ribcosta/ExploreRio" class="btn-secondary" target="_blank"
+          rel="noopener noreferrer" data-i18n="proj_github"><i class="fa-brands fa-github"></i> Github</a>
+      </div>
+
+      <div class="technologies">
+        <h3><span><i class="fa-solid fa-code"></i></span> <span data-i18n="proj_tech_used">Tecnologias Utilizadas</span></h3>
+        <div class="tech-badges-container">
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
+          <span class="tech-badge">JAVASCRIPT</span>
+        </div>
       </div>
     </div>
 
-    <div class="project-buttons">
-      <a href="#" class="btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="proj_vercel_breve"><i class="fa-solid fa-arrow-up-right-from-square"></i> Vercel (em breve...)</a>
-      <a href="https://github.com/gui-ribcosta/ExploreRio" class="btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="proj_github"><i class="fa-brands fa-github"></i> Github</a>
+    <!-- LADO DIREITO -->
+    <div class="project-right">
+      <div class="image-wrapper">
+        <img src="../../assets/images/explore_rio.png" alt="Projeto">
+      </div>
+
+      <div class="features-card">
+        <h3><i class="fa-solid fa-star"></i> <span data-i18n="proj_features">Funcionalidades</span></h3>
+        <ul>
+          <li data-i18n="feat_explore_1">Filtrar passeios por categoria (praias, trilhas, museus, pontos turísticos).</li>
+          <li data-i18n="feat_explore_2">Criar rotas personalizadas, otimizando a ordem de visita para maior eficiência.</li>
+          <li data-i18n="feat_explore_3">Navegação rápida e intuitiva, com atualização dinâmica dos resultados.</li>
+          <li data-i18n="feat_explore_4">Acessar de qualquer dispositivo com layout responsivo.</li>
+          <li data-i18n="feat_explore_5">Explorar locais organizados por região da cidade.</li>
+          <li data-i18n="feat_explore_6">Visualizar informações como nome, bairro, valor (gratuito ou pago) e tempo estimado de visita.</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <div class="technologies">
-      <h3 data-i18n="proj_tech_used"><span><i class="fa-solid fa-code"></i></span> Tecnologias Utilizadas</h3>
-      <span class="tech-badge">HTML</span>
-      <span class="tech-badge">CSS</span>
-      <span class="tech-badge">JAVASCRIPT</span>
-    </div>
-  </div>
-
-  <!-- LADO DIREITO -->
-<div class="image-wrapper">
-  <img src="../../assets/images/explore_rio.png" alt="Projeto">
-
-  <div class="features-card">
-    <h3 data-i18n="proj_features">⭐ Funcionalidades</h3>
-    <ul>
-      <li data-i18n="feat_explore_1">Filtrar passeios por categoria (praias, trilhas, museus, pontos turísticos).</li>
-      <li data-i18n="feat_explore_2">Criar rotas personalizadas, otimizando a ordem de visita para maior eficiência.</li>
-      <li data-i18n="feat_explore_3">Navegação rápida e intuitiva, com atualização dinâmica dos resultados.</li>
-      <li data-i18n="feat_explore_4">Acessar de qualquer dispositivo com layout responsivo.</li>
-      <li data-i18n="feat_explore_5">Explorar locais organizados por região da cidade.</li>
-      <li data-i18n="feat_explore_6">Visualizar informações como nome, bairro, valor (gratuito ou pago) e tempo estimado de visita.</li>
-    </ul>
-  </div>
-</div>
-
-<script src="../../scripts/core/translations.js"></script>
-<script src="../../scripts/core/i18n.js"></script>
+  <script src="../../scripts/core/translations.js"></script>
+  <script src="../../scripts/core/i18n.js"></script>
 </body>
+
 </html>
