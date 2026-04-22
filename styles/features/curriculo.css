@@ -157,14 +157,16 @@
     0 0 50px rgba(201,88,233,0.2);
 }
 
-.pdf-iframe {
+.pdf-canvas {
   width: 100%;
-  height: 85vh;
-  min-height: 600px;
-  border: none;
-  border-radius: 12px;
+  height: auto;
   display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 12px;
   background: #fff;
+}
+.pdf-canvas:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -204,9 +206,8 @@
     padding: 20px 3% 40px;
   }
 
-  .pdf-iframe {
-    height: 75vh;
-    min-height: 420px;
+  .pdf-canvas {
+    border-radius: 10px;
   }
 
 }
@@ -251,9 +252,7 @@
     border-radius: 14px;
   }
 
-  .pdf-iframe {
-    height: 70vh;
-    min-height: 360px;
+  .pdf-canvas {
     border-radius: 8px;
   }
 

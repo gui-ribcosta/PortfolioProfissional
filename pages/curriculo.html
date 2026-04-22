@@ -47,9 +47,9 @@
 
     <!-- Direita: Download + Idioma -->
     <div class="curriculo-header-right">
-      <a id="downloadBtn" href="assets/files/Currículo_Guilherme_Tecnologia.pdf" download class="btn-download"
-        data-i18n="cv_download" data-pdf-pt="assets/files/Currículo_Guilherme_Tecnologia.pdf"
-        data-pdf-en="assets/files/Resume_Guilherme_Technology.pdf"><i class="fa-solid fa-download"></i> BAIXAR PDF
+      <a id="downloadBtn" href="../assets/files/Curriculo_Guilherme_Tecnologia.pdf" download class="btn-download"
+        data-i18n="cv_download" data-pdf-pt="../assets/files/Curriculo_Guilherme_Tecnologia.pdf"
+        data-pdf-en="../assets/files/Resume_Guilherme_Technology.pdf"><i class="fa-solid fa-download"></i> BAIXAR PDF
       </a>
 
       <!-- Botão de Idioma -->
@@ -65,14 +65,14 @@
   <!-- ================= CONTEÚDO ================= -->
   <main class="curriculo-wrapper">
 
-    <div class="pdf-viewer-card">
-      <iframe id="pdfViewer" class="pdf-iframe" src="../assets/files/Currículo_Guilherme_Tecnologia.pdf"
-        title="Currículo Guilherme Ribeiro" data-pdf-pt="../assets/files/Currículo_Guilherme_Tecnologia.pdf"
-        data-pdf-en="../assets/files/Resume_Guilherme_Technology.pdf" allowfullscreen></iframe>
+    <div class="pdf-viewer-card" id="pdfContainer" data-pdf-pt="../assets/files/Curriculo_Guilherme_Tecnologia.pdf"
+      data-pdf-en="../assets/files/Resume_Guilherme_Technology.pdf">
+      <!-- Canvases das páginas do PDF serão injetados dinamicamente aqui -->
     </div>
 
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="../scripts/core/translations.js"></script>
   <script src="../scripts/core/i18n.js"></script>
   <script src="../scripts/features/resume.js"></script>
